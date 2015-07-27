@@ -1,0 +1,131 @@
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
+  <link rel="stylesheet" type="text/css" href="../Source/CSS/stylesheet.css"> 
+  <script src="../Source/Jquery/JQuery.js"> </script> 
+  <script>
+  $(document).ready(function() {
+	  	     TotalTime();
+	  	   TCCount();
+	  	 $("#Total_TC_Heading").click(function() {
+		  		$( ".Pass" ).show();
+		  		$( ".Pending" ).show();
+		  		$( ".Fail" ).show();
+		  		});
+		  	$("#Total_Pass_Heading").click(function() {
+		  		$( ".Pending" ).hide();
+		  		$( ".Fail" ).hide();
+		  		$( ".Pass" ).show();
+		  		});
+		  	$("#Total_Fail_Heading").click(function() {
+		  		$( ".Pending" ).hide();
+		  		$( ".Pass" ).hide();
+		  		$( ".Fail" ).show();
+		  		});
+		  	$("#Total_Pending_Heading").click(function() {
+		  		$( ".Fail" ).hide();
+		  		$( ".Pass" ).hide();
+		  		$( ".Pending" ).show();
+		  		});
+	  });
+ </script> 
+  <script>
+function TotalTime()
+{
+var tot=0;
+var dat = document.getElementsByName("TimeTaken");
+for(i=0;i<dat.length;i++)
+{
+	tot = tot + +dat[i].innerHTML;
+}
+var mins = Math.round(tot/60);
+document.getElementById("total_time").innerHTML = tot + " -> "+mins+"mins";
+//alert (tot);
+}
+function TCCount()
+{
+	var pass = -1, fail = -1,pending = -1;
+	var list = document.getElementsByTagName("img")
+	for(j=0;j<list.length;j++)
+	{
+		var temp = list[j].getAttribute("src");
+		if (temp.indexOf("green")>1)
+		{
+			pass = pass +1;
+		}
+		if (temp.indexOf("red")>1)
+		{
+			fail = fail +1;
+		}
+		if (temp.indexOf("yellow")>1)
+		{
+			pending = pending +1;
+		}
+	}
+	var totaltc = pass+fail+pending;
+	document.getElementById("total_tc").innerHTML = totaltc;
+	document.getElementById("total_pass").innerHTML = pass;
+	document.getElementById("total_fail").innerHTML = fail;
+	document.getElementById("total_pending").innerHTML = pending;
+	var completion = 0;
+	if (totaltc==0)
+	{
+		completion=0;
+	}
+	else
+	{	  
+	completion = Math.round(((pass+fail)/totaltc)*100);
+	}
+	document.getElementById("completion_percent").innerHTML = completion + "  %";
+}
+ </script> 
+  <title>Test Case Report</title> 
+ </head> 
+ <body> 
+  <div id="wrapper"> 
+   <table id="header_table"> 
+    <tbody> 
+     <tr> 
+      <td><img src="../Source/Image/Charter-logo-final.png" id="charter_logo"></td> 
+      <td><h1 id="charter_heading" onclick="TotalTime()">CTVA Automation Report</h1></td> 
+      <td><img src="../Source/Image/Infosys-logo-final.png" id="infosys_logo"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <a id="home_link" href="Index.html"><img src="../Source/Image/left_arrow.png">Home</a> 
+   <table id="tc_details" border="2"> 
+    <tbody> 
+     <tr> 
+      <td id="Total_TC_Heading"><a>Total TC</a></td> 
+      <td id="Total_Pass_Heading"><a>Pass <img src="../Source/Image/green dot.png"></a></td> 
+      <td id="Total_Fail_Heading"><a>Fail <img src="../Source/Image/red dot.jpg"></a></td> 
+      <td id="Total_Pending_Heading"><a>Pending <img src="../Source/Image/yellow dot.png"></a></td> 
+      <td>Completion %</td> 
+      <td>Total Time (s)</td> 
+     </tr> 
+     <tr> 
+      <td id="total_tc">596</td> 
+      <td id="total_pass">500</td> 
+      <td id="total_fail">90</td> 
+      <td id="total_pending">6</td> 
+      <td id="completion_percent">90</td> 
+      <td id="total_time">500</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <table id="tc_contents" border="2"> 
+    <tbody>
+     <tr id="tc_contents_heading"> 
+      <td width="10%">Manual TC</td> 
+      <td width="10%">Automation ID</td> 
+      <td width="30%">Description</td> 
+      <td width="15%">Status</td> 
+	  <td width="0%">SeeTestReport</td>
+      <td width="10%">Start Time</td> 
+      <td width="10%">End Time</td> 
+      <td width="10%">Time Taken (s)</td> 
+     </tr> 
+       </table> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/apache-mime4j-core-0.7.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axiom-api-1.2.13.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axiom-dom-1.2.13.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axiom-impl-1.2.13.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-adb-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-adb-codegen-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-ant-plugin-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-clustering-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-codegen-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-corba-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-fastinfoset-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-java2wsdl-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-jaxbri-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-jaxws-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-jibx-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-json-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-kernel-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-metadata-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-mtompolicy-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-saaj-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-soapmonitor-servlet-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-spring-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-transport-http-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-transport-local-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/axis2-xmlbeans-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/bcel-5.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/commons-fileupload-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/geronimo-annotation_1.0_spec-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/geronimo-jaxws_2.2_spec-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/geronimo-jta_1.1_spec-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/geronimo-saaj_1.3_spec-1.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/geronimo-stax-api_1.0_spec-1.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/httpcore-4.0.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jalopy-1.5rc3.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jaxb-impl-2.1.7.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jaxb-xjc-2.1.7.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jaxws-tools-2.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jettison-1.0-RC2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jibx-bind-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jibx-run-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/jsr311-api-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/juli-6.0.16.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/mail-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/mex-1.6.2-impl.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/neethi-3.0.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/regexp-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/tribes-6.0.16.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/woden-api-1.0M9.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/woden-impl-commons-1.0M9.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/woden-impl-dom-1.0M9.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/wsdl4j-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/wstx-asl-3.2.9.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/xalan-2.7.0.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/xml-resolver-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/axis2-1.6.2-bin/axis2-1.6.2/lib/XmlSchema-1.4.7.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/com.springsource.org.codehaus.jackson.mapper-1.4.2.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/com.springsource.org.codehaus.jackson-1.4.2.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/commons-codec-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/Fillo-1.12.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/javax-ssl-1_1.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/jcommander-1.6-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/json-simple.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/jsoup-1.8.1.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/jxl-2.6.12.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/testng-6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/adb-sms-client-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/adb-sms-common-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/admin-api.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/alloy.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/appframework-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/chrome.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/cloudagent-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/cloudserver-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/com.experitest.libimobiledevice.sdk.java-1.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-compress-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-exec-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-lang3-3.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/ddmlib.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/dd-plist-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/ExperitestBBUsb.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/ganymed-ssh2-261.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/guava-14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/hasp-srm-api.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/httpclient-4.3.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/httpcore-4.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/httpmime-4.3.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/imageClient.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/imageio-common-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/imageio-tiff-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/image-studio-ui-infa.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/Java-WebSocket-1.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/javax.annotation.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/jcodec-0.1.6-3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/jgoodies-common-1.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/jgoodies-forms-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/jna-4.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/joda-time-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/json-20140107.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/jsystem.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/junixsocket-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/jyscr.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/monkey-runner.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/padlock.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/pd4ml.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/sdump.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/selenium-api-2.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/selenium-java-2.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/selenium-remote-driver-2.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/selenium-support-2.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/serializer-2.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/simple-xml-2.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-aop-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-beans-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-context-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-core-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-expression-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-security-core-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-security-remoting-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/spring-web-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/ss_css2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/ssh-addon.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/swing-worker-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/swingx-core-1.6.2-2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/velocity-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/ws-commons-util-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/xalan-2.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/xmlrpc-client-3.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/xmlrpc-common-3.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/lib/xmlrpc-server-3.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Jars/file-utils.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/imageClient.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/imageClient_doc.zip"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/mobile-webdriver.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/selenium-api-2.42.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/selenium-support-2.44.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/ws-commons-util-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/xmlrpc-client-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/xmlrpc-common-3.1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

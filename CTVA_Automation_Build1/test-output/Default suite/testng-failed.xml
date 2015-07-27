@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="TestScripts.NewTestScripts">
+        <methods>
+          <include name="Auto_D2G_015"/>
+          <include name="Auto_D2G_013"/>
+          <include name="Add_IPVODAsset_Watchlist_011"/>
+          <include name="Auto_D2G_011"/>
+          <include name="Auto_D2G_014"/>
+          <include name="Auto_D2G_010"/>
+          <include name="Auto_Search_GeneralSearch_003"/>
+          <include name="Delete_1Serieswith2Episodes_Watchlist_008"/>
+          <include name="Auto_Search_GeneralSearch_001"/>
+          <include name="Auto_Search_GeneralSearch_004"/>
+          <include name="Auto_Search_GeneralSearch_002"/>
+          <include name="Auto_Search_GeneralSearch_005"/>
+          <include name="Auto_IPVOD_Validations_001"/>
+          <include name="Auto_Home_HomeScreen_007"/>
+          <include name="Auto_D2G_008"/>
+          <include name="Auto_D2G_006"/>
+          <include name="Auto_Home_HomeScreen_008"/>
+          <include name="Auto_D2G_002"/>
+          <include name="Auto_D2G_001"/>
+          <include name="Auto_OnDemand_027"/>
+          <include name="Auto_D2G_003"/>
+          <include name="Delete_1Serieswith2Episodes_Watchlist_014"/>
+          <include name="Auto_OnDemand_020"/>
+          <include name="Auto_LiveTvScreen_008"/>
+          <include name="Auto_Search_FullscreenSearch_002"/>
+          <include name="Auto_OnDemand_025"/>
+          <include name="Settings_About_010"/>
+          <include name="Add_Watchlist_1Serieswith2Episodes_001"/>
+          <include name="Delete_IPVODAsset_Watchlist_014"/>
+          <include name="Auto_OnDemand_021"/>
+          <include name="Auto_Search_FullscreenSearch_001"/>
+          <include name="Auto_OnDemand_024"/>
+          <include name="Auto_Home_HomeCustomizePanel_004"/>
+          <include name="Auto_Search_PopoverList_001"/>
+          <include name="Settings_Summary_001"/>
+          <include name="Auto_HelpOverlay_001"/>
+          <include name="Auto_Search_PopoverList_002"/>
+          <include name="Add_MovieAsst_Watchlist_017"/>
+          <include name="Auto_Home_FavoritesEditPopOver_009"/>
+          <include name="Auto_Home_FavoritesEditPopOver_006"/>
+          <include name="Auto_Home_FavoritesEditPopOver_008"/>
+          <include name="Auto_Search_PopoverList_003"/>
+          <include name="Auto_OnDemand_016"/>
+          <include name="Auto_Home_FavoritesEditPopOver_004"/>
+          <include name="Auto_OnDemand_018"/>
+          <include name="Settings_Managedevices_005"/>
+          <include name="Auto_OnDemand_017"/>
+          <include name="Auto_Login_LoginScreen_001"/>
+          <include name="Add_1Serieswith2Episodes_Watchlist_001"/>
+          <include name="Auto_HelpOverlay_002"/>
+          <include name="Delete_MovieAsset_Watchlist_018"/>
+          <include name="Auto_D2G_020"/>
+          <include name="Auto_D2G_018"/>
+          <include name="Auto_Search_GeneralSearch_006"/>
+        </methods>
+      </class> <!-- TestScripts.NewTestScripts -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

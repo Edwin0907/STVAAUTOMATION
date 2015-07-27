@@ -1,0 +1,1231 @@
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
+  <link rel="stylesheet" type="text/css" href="../Source/CSS/stylesheet.css"> 
+  <script src="../Source/Jquery/JQuery.js"> </script> 
+  <script>
+  $(document).ready(function() {
+	  	     TotalTime();
+	  	   TCCount();
+	  	 $("#Total_TC_Heading").click(function() {
+		  		$( ".Pass" ).show();
+		  		$( ".Pending" ).show();
+		  		$( ".Fail" ).show();
+		  		});
+		  	$("#Total_Pass_Heading").click(function() {
+		  		$( ".Pending" ).hide();
+		  		$( ".Fail" ).hide();
+		  		$( ".Pass" ).show();
+		  		});
+		  	$("#Total_Fail_Heading").click(function() {
+		  		$( ".Pending" ).hide();
+		  		$( ".Pass" ).hide();
+		  		$( ".Fail" ).show();
+		  		});
+		  	$("#Total_Pending_Heading").click(function() {
+		  		$( ".Fail" ).hide();
+		  		$( ".Pass" ).hide();
+		  		$( ".Pending" ).show();
+		  		});
+	  });
+ </script> 
+  <script>
+function TotalTime()
+{
+var tot=0;
+var dat = document.getElementsByName("TimeTaken");
+for(i=0;i<dat.length;i++)
+{
+	tot = tot + +dat[i].innerHTML;
+}
+var mins = Math.round(tot/60);
+document.getElementById("total_time").innerHTML = tot + " -> "+mins+"mins";
+//alert (tot);
+}
+function TCCount()
+{
+	var pass = -1, fail = -1,pending = -1;
+	var list = document.getElementsByTagName("img")
+	for(j=0;j<list.length;j++)
+	{
+		var temp = list[j].getAttribute("src");
+		if (temp.indexOf("green")>1)
+		{
+			pass = pass +1;
+		}
+		if (temp.indexOf("red")>1)
+		{
+			fail = fail +1;
+		}
+		if (temp.indexOf("yellow")>1)
+		{
+			pending = pending +1;
+		}
+	}
+	var totaltc = pass+fail+pending;
+	document.getElementById("total_tc").innerHTML = totaltc;
+	document.getElementById("total_pass").innerHTML = pass;
+	document.getElementById("total_fail").innerHTML = fail;
+	document.getElementById("total_pending").innerHTML = pending;
+	var completion = 0;
+	if (totaltc==0)
+	{
+		completion=0;
+	}
+	else
+	{	  
+	completion = Math.round(((pass+fail)/totaltc)*100);
+	}
+	document.getElementById("completion_percent").innerHTML = completion + "  %";
+}
+ </script> 
+  <title>Test Case Report</title> 
+ </head> 
+ <body> 
+  <div id="wrapper"> 
+   <table id="header_table"> 
+    <tbody> 
+     <tr> 
+      <td><img src="../Source/Image/Charter-logo-final.png" id="charter_logo"></td> 
+      <td><h1 id="charter_heading" onclick="TotalTime()">CTVA Automation Report</h1></td> 
+      <td><img src="../Source/Image/Infosys-logo-final.png" id="infosys_logo"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <a id="home_link" href="Index.html"><img src="../Source/Image/left_arrow.png">Home</a> 
+   <table id="tc_details" border="2"> 
+    <tbody> 
+     <tr> 
+      <td id="Total_TC_Heading"><a>Total TC</a></td> 
+      <td id="Total_Pass_Heading"><a>Pass <img src="../Source/Image/green dot.png"></a></td> 
+      <td id="Total_Fail_Heading"><a>Fail <img src="../Source/Image/red dot.jpg"></a></td> 
+      <td id="Total_Pending_Heading"><a>Pending <img src="../Source/Image/yellow dot.png"></a></td> 
+      <td>Completion %</td> 
+      <td>Total Time (s)</td> 
+     </tr> 
+     <tr> 
+      <td id="total_tc">596</td> 
+      <td id="total_pass">500</td> 
+      <td id="total_fail">90</td> 
+      <td id="total_pending">6</td> 
+      <td id="completion_percent">90</td> 
+      <td id="total_time">500</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <table id="tc_contents" border="2"> 
+    <tbody> 
+     <tr id="tc_contents_heading"> 
+      <td width="10%">Manual TC</td> 
+      <td width="15%">Automation ID</td> 
+      <td width="40%">Description</td> 
+      <td width="5%">Status</td> 
+      <td width="10%">Start Time</td> 
+      <td width="10%">End Time</td> 
+      <td width="10%">Time Taken (s)</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_001.html';"> 
+      <td align="center">C47488</td> 
+      <td align="center">Auto_Login_General_001</td> 
+      <td>Observe the Welcome Text displayed with Welcome</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:35:17</td> 
+      <td align="center">16:35:36</td> 
+      <td align="center" name="TimeTaken">19</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_002.html';"> 
+      <td align="center">C47502</td> 
+      <td align="center">Auto_Login_General_002</td> 
+      <td>Username hint text validation</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:35:36</td> 
+      <td align="center">16:35:38</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_003.html';"> 
+      <td align="center">C47932</td> 
+      <td align="center">Auto_Login_General_003</td> 
+      <td>Show Password field should be displayed below pasword field</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:35:38</td> 
+      <td align="center">16:35:40</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_004.html';"> 
+      <td align="center">C75023</td> 
+      <td align="center">Auto_Login_General_004</td> 
+      <td>User should be able to enter Password</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:35:40</td> 
+      <td align="center">16:36:04</td> 
+      <td align="center" name="TimeTaken">24</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_005" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_005.html';"> 
+      <td align="center">C47574</td> 
+      <td align="center">Auto_Login_General_005</td> 
+      <td>Text should be visible when we select the Show password field</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:36:04</td> 
+      <td align="center">16:36:10</td> 
+      <td align="center" name="TimeTaken">6</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_006.html';"> 
+      <td align="center">C47757</td> 
+      <td align="center">Auto_Login_General_006</td> 
+      <td>Login button should be displayed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:36:10</td> 
+      <td align="center">16:36:32</td> 
+      <td align="center" name="TimeTaken">22</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_007" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_007.html';"> 
+      <td align="center">C47756</td> 
+      <td align="center">Auto_Login_General_007</td> 
+      <td>Help Pop over should be displayed on click of help</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:36:32</td> 
+      <td align="center">16:36:36</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_008" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_008.html';"> 
+      <td align="center">C47756</td> 
+      <td align="center">Auto_Login_General_008</td> 
+      <td>On logging in with Mountain customer user should get an error message</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:36:36</td> 
+      <td align="center">16:37:43</td> 
+      <td align="center" name="TimeTaken">67</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_009" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_009.html';"> 
+      <td align="center">C47574</td> 
+      <td align="center">Auto_Login_General_009</td> 
+      <td>Verify that the welcome screen is getting displayed while logging in App for the first time</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:37:43</td> 
+      <td align="center">16:38:56</td> 
+      <td align="center" name="TimeTaken">73</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_010" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Login_General_010.html';"> 
+      <td align="center">C47575</td> 
+      <td align="center">Auto_Login_General_010</td> 
+      <td>Verify that the animated Splash screen is replaced in the place of Fetching accounts text</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:38:56</td> 
+      <td align="center">16:38:59</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_001.html';"> 
+      <td align="center">C47985</td> 
+      <td align="center">Auto_IPVOD_Validations_001</td> 
+      <td>Verification for the Display Recently Watched Shelf under My Library screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:43:58</td> 
+      <td align="center">15:45:19</td> 
+      <td align="center" name="TimeTaken">81</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_002.html';"> 
+      <td align="center">C47986</td> 
+      <td align="center">Auto_IPVOD_Validations_002</td> 
+      <td>Verification for the Browse All Page- Recently Watched</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:45:19</td> 
+      <td align="center">15:45:22</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_003.html';"> 
+      <td align="center">C47987</td> 
+      <td align="center">Auto_IPVOD_Validations_003</td> 
+      <td>Verification for the Browse All Edit- Recently Watched</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:45:22</td> 
+      <td align="center">15:45:25</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_004.html';"> 
+      <td align="center">C47988</td> 
+      <td align="center">Auto_IPVOD_Validations_004</td> 
+      <td>Verification for the Assets under Browse All Edit - Recently Watched view</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:45:25</td> 
+      <td align="center">15:45:26</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_005" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_005.html';"> 
+      <td align="center">C47989</td> 
+      <td align="center">Auto_IPVOD_Validations_005</td> 
+      <td>Verification for the Recently Watched assets under Recently Watched Section</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:45:26</td> 
+      <td align="center">15:45:53</td> 
+      <td align="center" name="TimeTaken">27</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_006.html';"> 
+      <td align="center">C47990</td> 
+      <td align="center">Auto_IPVOD_Validations_006</td> 
+      <td>Verification for Navigate to Asset details from Recently Watched shelf</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:45:53</td> 
+      <td align="center">15:46:00</td> 
+      <td align="center" name="TimeTaken">7</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_007" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_007.html';"> 
+      <td align="center">C47991</td> 
+      <td align="center">Auto_IPVOD_Validations_007</td> 
+      <td>Verification for the Display Last Channels Shelf under My Library screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:46:00</td> 
+      <td align="center">15:46:11</td> 
+      <td align="center" name="TimeTaken">11</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_008" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_008.html';"> 
+      <td align="center">C47992</td> 
+      <td align="center">Auto_IPVOD_Validations_008</td> 
+      <td>Verification for the Browse All Page- Last Channels</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:46:11</td> 
+      <td align="center">15:46:13</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_009" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_009.html';"> 
+      <td align="center">C47993</td> 
+      <td align="center">Auto_IPVOD_Validations_009</td> 
+      <td>Verification for the Browse All Edit- Last Channels</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:46:13</td> 
+      <td align="center">15:46:14</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_010" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_010.html';"> 
+      <td align="center">C47994</td> 
+      <td align="center">Auto_IPVOD_Validations_010</td> 
+      <td>Verification for the Last Channels under Browse All Edit - Last Channels</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:46:14</td> 
+      <td align="center">15:46:14</td> 
+      <td align="center" name="TimeTaken">0</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_011" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_011.html';"> 
+      <td align="center">C47995</td> 
+      <td align="center">Auto_IPVOD_Validations_011</td> 
+      <td>Verification for the Last Channels under Last Channels Shelf</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:46:14</td> 
+      <td align="center">15:46:37</td> 
+      <td align="center" name="TimeTaken">23</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_012" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_012.html';"> 
+      <td align="center">C47996</td> 
+      <td align="center">Auto_IPVOD_Validations_012</td> 
+      <td>Verification for the Stream asset from Last Channels under Last Channels Shelf</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:46:37</td> 
+      <td align="center">15:47:01</td> 
+      <td align="center" name="TimeTaken">24</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_013" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_013.html';"> 
+      <td align="center">C47997</td> 
+      <td align="center">Auto_IPVOD_Validations_013</td> 
+      <td>Verification for the Display Download Shelf under My Library screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:47:01</td> 
+      <td align="center">15:47:31</td> 
+      <td align="center" name="TimeTaken">30</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_014" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_014.html';"> 
+      <td align="center">C47998</td> 
+      <td align="center">Auto_IPVOD_Validations_014</td> 
+      <td>Verify that the Display Help Message on empty Downloads shelf under My Library screen</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">15:47:31</td> 
+      <td align="center">15:47:53</td> 
+      <td align="center" name="TimeTaken">22</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_015" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_015.html';"> 
+      <td align="center">C47999</td> 
+      <td align="center">Auto_IPVOD_Validations_015</td> 
+      <td>Verification for the Hidden Browse All link_Downloads Shelf with Zero downloads</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:47:53</td> 
+      <td align="center">15:48:17</td> 
+      <td align="center" name="TimeTaken">24</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_016" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_016.html';"> 
+      <td align="center">C48000</td> 
+      <td align="center">Auto_IPVOD_Validations_016</td> 
+      <td>Verification for the Display My Favorites shelf under My Library Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:48:17</td> 
+      <td align="center">15:48:47</td> 
+      <td align="center" name="TimeTaken">30</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_017" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_017.html';"> 
+      <td align="center">C48001</td> 
+      <td align="center">Auto_IPVOD_Validations_017</td> 
+      <td>Verification for the Display of Edit button under My Favorites shelf</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:48:47</td> 
+      <td align="center">15:48:48</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_018" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_018.html';"> 
+      <td align="center">C48002</td> 
+      <td align="center">Auto_IPVOD_Validations_018</td> 
+      <td>Verification for the Display Watchlist shelf under My Library Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:48:48</td> 
+      <td align="center">15:49:25</td> 
+      <td align="center" name="TimeTaken">37</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_019" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_019.html';"> 
+      <td align="center">C48003</td> 
+      <td align="center">Auto_IPVOD_Validations_019</td> 
+      <td>Verification for the Display of Browse All button under Watchlist shelf (Asset Should be there under Watchlist shelf)</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:49:25</td> 
+      <td align="center">15:49:26</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_020" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_020.html';"> 
+      <td align="center">C48004</td> 
+      <td align="center">Auto_IPVOD_Validations_020</td> 
+      <td>Verification for the Browse All Page- Watchlist</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:49:26</td> 
+      <td align="center">15:49:28</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_021" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_021.html';"> 
+      <td align="center">C48005</td> 
+      <td align="center">Auto_IPVOD_Validations_021</td> 
+      <td>Verification for the Browse All Edit- Watchlist</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:49:28</td> 
+      <td align="center">15:49:30</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_022" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_IPVOD_Validations_022.html';"> 
+      <td align="center">C48006</td> 
+      <td align="center">Auto_IPVOD_Validations_022</td> 
+      <td>Verification for the Assets under Browse All Edit - Watchlist</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">15:49:30</td> 
+      <td align="center">15:50:18</td> 
+      <td align="center" name="TimeTaken">48</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_001.html';"> 
+      <td align="center">C132335</td> 
+      <td align="center">Auto_D2G_001</td> 
+      <td>Verify that Registered Devices tab is displayed in Settings screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:50:18</td> 
+      <td align="center">15:51:43</td> 
+      <td align="center" name="TimeTaken">85</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_002" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_002.html';"> 
+      <td align="center">C132339</td> 
+      <td align="center">Auto_D2G_002</td> 
+      <td>Verify whether user is able to download an asset in device which is already registered by other user</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">15:51:43</td> 
+      <td align="center">15:53:21</td> 
+      <td align="center" name="TimeTaken">98</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_003.html';"> 
+      <td align="center">C132340</td> 
+      <td align="center">Auto_D2G_003</td> 
+      <td>Verify whether user is able to register a device on tapping the Register option</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:53:22</td> 
+      <td align="center">15:54:13</td> 
+      <td align="center" name="TimeTaken">51</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_004.html';"> 
+      <td align="center">C132341</td> 
+      <td align="center">Auto_D2G_004</td> 
+      <td>Verify whether user is able to remove a registered device on tapping the Remove option</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:54:13</td> 
+      <td align="center">15:54:33</td> 
+      <td align="center" name="TimeTaken">20</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_005" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_005.html';"> 
+      <td align="center">C132342</td> 
+      <td align="center">Auto_D2G_005</td> 
+      <td>Verify whether the available storage for the device is displayed in the Registered Device screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:54:33</td> 
+      <td align="center">15:54:39</td> 
+      <td align="center" name="TimeTaken">6</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_006.html';"> 
+      <td align="center">C132343</td> 
+      <td align="center">Auto_D2G_006</td> 
+      <td>Verify whether Register option is displayed if the device in use is not registered</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:54:39</td> 
+      <td align="center">15:55:04</td> 
+      <td align="center" name="TimeTaken">25</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_007" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_007.html';"> 
+      <td align="center">C132345</td> 
+      <td align="center">Auto_D2G_007</td> 
+      <td>Verify whether Remove option is displayed if the device in use is registered</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:55:04</td> 
+      <td align="center">15:55:10</td> 
+      <td align="center" name="TimeTaken">6</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_008" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_008.html';"> 
+      <td align="center">C132357</td> 
+      <td align="center">Auto_D2G_008</td> 
+      <td>Verify whether a modal is displayed on tapping D2G icon where user has not registered the device(currently using)</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:55:10</td> 
+      <td align="center">15:56:17</td> 
+      <td align="center" name="TimeTaken">67</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_009" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_009.html';"> 
+      <td align="center">C132351</td> 
+      <td align="center">Auto_D2G_009</td> 
+      <td>Verify that when tapping on Cancel option button in Register Device Modal gets the user back to asset detail screen of the selected asset</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:56:17</td> 
+      <td align="center">15:56:28</td> 
+      <td align="center" name="TimeTaken">11</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_010" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_010.html';"> 
+      <td align="center">C132331</td> 
+      <td align="center">Auto_D2G_010</td> 
+      <td>Verify that the default nicknames of all registered devices can be viewed at household level in Settings screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:56:28</td> 
+      <td align="center">15:56:58</td> 
+      <td align="center" name="TimeTaken">30</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_011" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_011.html';"> 
+      <td align="center">C132438</td> 
+      <td align="center">Auto_D2G_011</td> 
+      <td>Verify whether user receives a confirmation message that the mobile device was successfully deregistered when the user is on the device.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:56:58</td> 
+      <td align="center">15:58:04</td> 
+      <td align="center" name="TimeTaken">66</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_012" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_012.html';"> 
+      <td align="center">C132435</td> 
+      <td align="center">Auto_D2G_012</td> 
+      <td>Verify whether the Remove button is changed to Register once user deregisters the device</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:58:04</td> 
+      <td align="center">15:58:17</td> 
+      <td align="center" name="TimeTaken">13</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_013" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_013.html';"> 
+      <td align="center">C132440</td> 
+      <td align="center">Auto_D2G_013</td> 
+      <td></td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">15:58:17</td> 
+      <td align="center">16:03:57</td> 
+      <td align="center" name="TimeTaken">340</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_014" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_014.html';"> 
+      <td align="center">C132442</td> 
+      <td align="center">Auto_D2G_014</td> 
+      <td>Verify whether user is able to close the Device Removal Notification Modal on tapping OK option</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:03:57</td> 
+      <td align="center">16:05:02</td> 
+      <td align="center" name="TimeTaken">65</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_015" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_015.html';"> 
+      <td align="center"></td> 
+      <td align="center">Auto_D2G_015</td> 
+      <td>Video quality pop over should appear with high quality and standard quality button</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:05:02</td> 
+      <td align="center">16:06:31</td> 
+      <td align="center" name="TimeTaken">89</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_016" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_016.html';"> 
+      <td align="center"></td> 
+      <td align="center">Auto_D2G_016</td> 
+      <td>Vide quality pop over should contain available memory information</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:06:31</td> 
+      <td align="center">16:06:35</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_017" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_017.html';"> 
+      <td align="center"></td> 
+      <td align="center">Auto_D2G_017</td> 
+      <td>On clicking cancel the video quality pop over should be dismissed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:06:35</td> 
+      <td align="center">16:06:49</td> 
+      <td align="center" name="TimeTaken">14</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_018" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_018.html';"> 
+      <td align="center">C132258</td> 
+      <td align="center">Auto_D2G_018</td> 
+      <td>Verify that user is able to filter the content available to watch On device and Watch On TV</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:06:50</td> 
+      <td align="center">16:07:02</td> 
+      <td align="center" name="TimeTaken">12</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_019" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_019.html';"> 
+      <td align="center"></td> 
+      <td align="center">Auto_D2G_019</td> 
+      <td>Verify that user is able to toggle between the display of On Demand assets via watch On device and Watch On TV dropdown</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:07:02</td> 
+      <td align="center">16:07:35</td> 
+      <td align="center" name="TimeTaken">33</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_020" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_D2G_020.html';"> 
+      <td align="center">C132264</td> 
+      <td align="center">Auto_D2G_020</td> 
+      <td>Verify that selecting Watch On Device option from drop down , the refreshed screen must get updated with the features required</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:07:35</td> 
+      <td align="center">16:08:28</td> 
+      <td align="center" name="TimeTaken">53</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_001.html';"> 
+      <td align="center">C47862</td> 
+      <td align="center">Auto_OnDemand_001</td> 
+      <td>When the user taps on an On Demand network, they should be directed to the Network Browse All View. Series related to the selected network should display with cover art</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:08:28</td> 
+      <td align="center">16:09:14</td> 
+      <td align="center" name="TimeTaken">46</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_003" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_003.html';"> 
+      <td align="center">C47874</td> 
+      <td align="center">Auto_OnDemand_003</td> 
+      <td>When in On Demand Premiums, tapping on a network will bring the user to the Browse All View for that network. This view will have all associated assets for that network.</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">16:09:16</td> 
+      <td align="center">16:09:57</td> 
+      <td align="center" name="TimeTaken">41</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_004.html';"> 
+      <td align="center">C47490</td> 
+      <td align="center">Auto_OnDemand_004</td> 
+      <td>Verify whether Customize panel appears at bottom beneath all panel</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:09:57</td> 
+      <td align="center">16:10:58</td> 
+      <td align="center" name="TimeTaken">61</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_005" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_005.html';"> 
+      <td align="center">C47490</td> 
+      <td align="center">Auto_OnDemand_005</td> 
+      <td>Verify whether Customize panel appears at bottom beneath all panels</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:10:58</td> 
+      <td align="center">16:11:36</td> 
+      <td align="center" name="TimeTaken">38</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_006.html';"> 
+      <td align="center">C47492</td> 
+      <td align="center">Auto_OnDemand_006</td> 
+      <td>Verfiy whether the text Tap to change the arrangement of the sections in On Demand Movies Page is displayed beneath the Customize icon</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:11:36</td> 
+      <td align="center">16:11:38</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_007" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_007.html';"> 
+      <td align="center">C47778</td> 
+      <td align="center">Auto_OnDemand_007</td> 
+      <td>Verify that the user is able to customize the panels under Movies section in On Demand screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:11:38</td> 
+      <td align="center">16:12:42</td> 
+      <td align="center" name="TimeTaken">64</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_008" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_008.html';"> 
+      <td align="center">C47880</td> 
+      <td align="center">Auto_OnDemand_008</td> 
+      <td>Browse All page should appear when clicking the Browse All button.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:12:42</td> 
+      <td align="center">16:14:08</td> 
+      <td align="center" name="TimeTaken">86</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_009" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_009.html';"> 
+      <td align="center">C47777</td> 
+      <td align="center">Auto_OnDemand_009</td> 
+      <td>The On Demand Movies Featured Content should display Featured Content and can swipe left and right to view Assets. Tapping banner will bring the user to the Fullscreen Asset Detail for the selected asset.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:14:08</td> 
+      <td align="center">16:14:30</td> 
+      <td align="center" name="TimeTaken">22</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_010" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_OnDemand_010.html';"> 
+      <td align="center">C48030</td> 
+      <td align="center">Auto_OnDemand_010</td> 
+      <td>On TV Featured Content should display and be able to swipe left and right.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:14:30</td> 
+      <td align="center">16:15:29</td> 
+      <td align="center" name="TimeTaken">59</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Home_FavoritesEditPopOver_001.html';"> 
+      <td align="center">C48031</td> 
+      <td align="center">Auto_Home_FavoritesEditPopOver_001</td> 
+      <td>The Channel Number and Call Sign Channel Abbreviation should appear in all of the Network Cells of the My Favorites Edit-Popover.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:15:29</td> 
+      <td align="center">16:16:21</td> 
+      <td align="center" name="TimeTaken">52</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Home_FavoritesEditPopOver_002.html';"> 
+      <td align="center">C48032</td> 
+      <td align="center">Auto_Home_FavoritesEditPopOver_002</td> 
+      <td>The Sort Scrubber A-Z and 1-1000 should appear in the My Favorites Edit Pop-Over</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:16:21</td> 
+      <td align="center">16:16:49</td> 
+      <td align="center" name="TimeTaken">28</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Home_FavoritesEditPopOver_003.html';"> 
+      <td align="center">C48033</td> 
+      <td align="center">Auto_Home_FavoritesEditPopOver_003</td> 
+      <td>Verify that filter edit button in the filter panel populates Network dropdown pop-over with this list of filter items: My favorites, Live TV, HD Only, Premium, Family and Education, Lifestyle, Movies, , Music, News &amp; Weather and Sports.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:16:49</td> 
+      <td align="center">16:19:10</td> 
+      <td align="center" name="TimeTaken">141</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_001" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_DDL_001.html';"> 
+      <td align="center">C48034</td> 
+      <td align="center">Auto_Guide_DDL_001</td> 
+      <td>Verify that the Guide defaults to the current day by displaying Today in the Day Drop Down</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">16:19:10</td> 
+      <td align="center">16:19:56</td> 
+      <td align="center" name="TimeTaken">46</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_GuideScreen_001.html';"> 
+      <td align="center">C48039</td> 
+      <td align="center">Auto_Guide_GuideScreen_001</td> 
+      <td>After login the Guide should be unfiltered.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:20:04</td> 
+      <td align="center">16:20:56</td> 
+      <td align="center" name="TimeTaken">52</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_GuideScreen_002.html';"> 
+      <td align="center">C48040</td> 
+      <td align="center">Auto_Guide_GuideScreen_002</td> 
+      <td>Guide should scroll smoothly both horizontally and vertically.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:20:56</td> 
+      <td align="center">16:21:00</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_GuideScreen_003.html';"> 
+      <td align="center">C47601</td> 
+      <td align="center">Auto_Guide_GuideScreen_003</td> 
+      <td>Network cells should appear on left-hand side of Guide.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:21:01</td> 
+      <td align="center">16:21:12</td> 
+      <td align="center" name="TimeTaken">11</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_GuideScreen_004.html';"> 
+      <td align="center">C47602</td> 
+      <td align="center">Auto_Guide_GuideScreen_004</td> 
+      <td>Verify that the Program Cells in Guide load correctly with Asset Titles Episode Titles Series Assets Only ON Demand indicators for VOD assets only</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:21:12</td> 
+      <td align="center">16:22:19</td> 
+      <td align="center" name="TimeTaken">67</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_005" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_GuideScreen_005.html';"> 
+      <td align="center">C47603</td> 
+      <td align="center">Auto_Guide_GuideScreen_005</td> 
+      <td>Guide should have ability to sort alphabetically or numerically (A-Z and 1-1000).</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">16:22:19</td> 
+      <td align="center">16:22:42</td> 
+      <td align="center" name="TimeTaken">23</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_NCP_001.html';"> 
+      <td align="center">C47604</td> 
+      <td align="center">Auto_Guide_NCP_001</td> 
+      <td>When a network cell is tapped from the Guide, the Network Cell Pop-over for the selected network should appear.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:22:42</td> 
+      <td align="center">16:22:58</td> 
+      <td align="center" name="TimeTaken">16</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_NCP_002.html';"> 
+      <td align="center">C47605</td> 
+      <td align="center">Auto_Guide_NCP_002</td> 
+      <td>The Favorite Heart option should display in the Network-popover Header</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:22:58</td> 
+      <td align="center">16:23:01</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_NCP_003.html';"> 
+      <td align="center">C47606</td> 
+      <td align="center">Auto_Guide_NCP_003</td> 
+      <td>The Network Cell Pop-over should display the network Logo for each channel above the programs listed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:23:01</td> 
+      <td align="center">16:23:04</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_Guide_NCP_004.html';"> 
+      <td align="center">C47607</td> 
+      <td align="center">Auto_Guide_NCP_004</td> 
+      <td>The Network cell pop-over should appear with the Channel Number</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">16:23:04</td> 
+      <td align="center">16:23:06</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_KidZoneLockPopOver_001.html';"> 
+      <td align="center">C47608</td> 
+      <td align="center">Auto_KidZone_KidZoneLockPopOver_001</td> 
+      <td>Verify the kidzone functionality</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:25:08</td> 
+      <td align="center">10:26:08</td> 
+      <td align="center" name="TimeTaken">60</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_KidZoneLockPopOver_002.html';"> 
+      <td align="center">C47609</td> 
+      <td align="center">Auto_KidZone_KidZoneLockPopOver_002</td> 
+      <td>Verify the kidzone functionality</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:26:08</td> 
+      <td align="center">10:26:16</td> 
+      <td align="center" name="TimeTaken">8</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_KidZoneLockPopOver_003.html';"> 
+      <td align="center">C47610</td> 
+      <td align="center">Auto_KidZone_KidZoneLockPopOver_003</td> 
+      <td>Verify the kidzone functionality</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:26:16</td> 
+      <td align="center">10:26:23</td> 
+      <td align="center" name="TimeTaken">7</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_KidZone_KidZoneLockPopOver_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_001.html';"> 
+      <td align="center">C47612</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_001</td> 
+      <td>Verify the Program Title displays in the Full Asset Detail Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:30:17</td> 
+      <td align="center">10:32:38</td> 
+      <td align="center" name="TimeTaken">141</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_TimeSlot_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_TimeSlot_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_OriginalAirDate_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_OriginalAirDate_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_DVRSelector_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_DVRSelector_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_NetwrokLOGO_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_NetwrokLOGO_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_WatchLiveText_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_WatchLiveText_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_WatchLIveIcon_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_WatchLIveIcon_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_RecordIcon_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_RecordIcon_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_WatchlistIcon_009" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_WatchlistIcon_009</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_NetworkLOGO_010" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_FullScreen_GetListings_NetworkLOGO_010</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_001.html';"> 
+      <td align="center">C47622</td> 
+      <td align="center">Auto_SportZone_001</td> 
+      <td>Verify whether the programs are not available for streaming while Out of Home</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:32:58</td> 
+      <td align="center">10:34:09</td> 
+      <td align="center" name="TimeTaken">71</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_002" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_002.html';"> 
+      <td align="center">C47623</td> 
+      <td align="center">Auto_SportZone_002</td> 
+      <td>Verify whether Dragging down the page display loading spindle</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">10:34:09</td> 
+      <td align="center">10:34:23</td> 
+      <td align="center" name="TimeTaken">14</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_003.html';"> 
+      <td align="center">C47624</td> 
+      <td align="center">Auto_SportZone_003</td> 
+      <td>Verify whether Loading spindle is getting diminished after the page is refreshed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:34:23</td> 
+      <td align="center">10:34:35</td> 
+      <td align="center" name="TimeTaken">12</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_004.html';"> 
+      <td align="center">C47625</td> 
+      <td align="center">Auto_SportZone_004</td> 
+      <td>Verify that Sports Zone menu is been added in home screen navigation drawer after On Demand and before Kid Zone</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:34:35</td> 
+      <td align="center">10:34:45</td> 
+      <td align="center" name="TimeTaken">10</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_005" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_005.html';"> 
+      <td align="center">C47626</td> 
+      <td align="center">Auto_SportZone_005</td> 
+      <td>Verify that Network Logo or Network call sign is displayed in SportZone page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:34:45</td> 
+      <td align="center">10:34:49</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_006.html';"> 
+      <td align="center">C47627</td> 
+      <td align="center">Auto_SportZone_006</td> 
+      <td>Verify whether the section Games on TV is available in the Sportszone tab</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">10:34:49</td> 
+      <td align="center">10:34:50</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_007" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_007.html';">
+      <td align="center">C47628</td>
+      <td align="center">Auto_SportZone_007</td>
+      <td>Verify whether the User is able to swip the SportZone page</td>
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td>
+      <td align="center">10:34:50</td>
+      <td align="center">10:35:55</td>
+      <td align="center" name="TimeTaken">65</td>
+     </tr> 
+    </tbody> 
+   </table> 
+  </div>  
+ </body>
+</html>
