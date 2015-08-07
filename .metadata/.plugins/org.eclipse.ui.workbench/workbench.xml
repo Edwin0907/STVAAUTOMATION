@@ -34,17 +34,17 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MasterScript.java" partName="MasterScript.java" path="D:/STVA_GIT/STVAAUTOMATION/CTVA_Automation_Build1/src/Batch/MasterScript.java" title="MasterScript.java" tooltip="CTVA_Automation_Build1/src/Batch/MasterScript.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MasterScript.java" partName="MasterScript.java" path="D:/STVA_GIT/STVAAUTOMATION/CTVA_Automation_Build1/src/Batch/MasterScript.java" title="MasterScript.java" tooltip="CTVA_Automation_Build1/src/Batch/MasterScript.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CTVA_Automation_Build1/src/Batch/MasterScript.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3632" selectionTopPixel="1275"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="496" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewTestScripts.java" partName="NewTestScripts.java" path="D:/STVA_GIT/STVAAUTOMATION/CTVA_Automation_Build1/src/TestScripts/NewTestScripts.java" title="NewTestScripts.java" tooltip="CTVA_Automation_Build1/src/TestScripts/NewTestScripts.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CTVA_Automation_Build1/src/TestScripts/NewTestScripts.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="122073" selectionTopPixel="59815"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="122074" selectionTopPixel="59815"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppNewFunctions.java" partName="AppNewFunctions.java" path="D:/STVA_GIT/STVAAUTOMATION/CTVA_Automation_Build1/src/TestScripts/AppNewFunctions.java" title="AppNewFunctions.java" tooltip="CTVA_Automation_Build1/src/TestScripts/AppNewFunctions.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppNewFunctions.java" partName="AppNewFunctions.java" path="D:/STVA_GIT/STVAAUTOMATION/CTVA_Automation_Build1/src/TestScripts/AppNewFunctions.java" title="AppNewFunctions.java" tooltip="CTVA_Automation_Build1/src/TestScripts/AppNewFunctions.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CTVA_Automation_Build1/src/TestScripts/AppNewFunctions.java"/>
-<editorState selectionHorizontalPixel="54" selectionLength="0" selectionOffset="143427" selectionTopPixel="35258"/>
+<editorState selectionHorizontalPixel="32" selectionLength="12" selectionOffset="142862" selectionTopPixel="38675"/>
 </editor>
 </editors>
 <views>
@@ -223,6 +223,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CTVA_Automation_Build1/src/Batch/MasterScript.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CTVA_Automation_Build1/src/TestScripts/NewTestScripts.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CTVA_Automation_Build1/src/TestScripts/AppNewFunctions.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CTVA_Automation_Build1/src/TestScripts/NewTestScripts.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CTVA_Automation_Build1/src/TestScripts/AppNewFunctions.java"/>
 </editors>
 <item historyLabel="MasterScript.java" index="0">
 <position info="not_deleted" x="0" y="0"/>
@@ -245,8 +247,29 @@
 <item historyLabel="AppNewFunctions.java" index="2">
 <position info="not_deleted" x="143427" y="0"/>
 </item>
-<item active="true" historyLabel="MasterScript.java" index="0">
+<item historyLabel="MasterScript.java" index="0">
 <position info="not_deleted" x="891" y="0"/>
+</item>
+<item historyLabel="NewTestScripts.java" index="3">
+<position info="not_deleted" x="122073" y="0"/>
+</item>
+<item historyLabel="AppNewFunctions.java" index="4">
+<position info="not_deleted" x="143427" y="0"/>
+</item>
+<item historyLabel="AppNewFunctions.java" index="4">
+<position info="not_deleted" x="145223" y="8"/>
+</item>
+<item historyLabel="AppNewFunctions.java" index="4">
+<position info="not_deleted" x="145332" y="0"/>
+</item>
+<item historyLabel="AppNewFunctions.java" index="4">
+<position info="not_deleted" x="130764" y="15"/>
+</item>
+<item historyLabel="AppNewFunctions.java" index="4">
+<position info="not_deleted" x="131252" y="0"/>
+</item>
+<item active="true" historyLabel="AppNewFunctions.java" index="4">
+<position info="not_deleted" x="142862" y="12"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
