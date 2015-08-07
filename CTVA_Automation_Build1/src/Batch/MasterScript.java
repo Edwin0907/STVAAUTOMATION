@@ -23,7 +23,7 @@ public class MasterScript
 		//TR.Connect_TestRail();
 		//Release name or Build name
 		g.Current_Build = "Android_Build_2.2.8-Dry1";
-		g.Result_Path = "D:\\"; // Modification is on progress to redirect to drive C
+		g.Result_Path = "C:\\"; // Modification is on progress to redirect to drive C
 		
 		/*Modified to retrieve path Using Main class name - modified by Deepak*/
 		final File f = new File(MasterScript.class.getProtectionDomain().getCodeSource().getLocation().getPath());

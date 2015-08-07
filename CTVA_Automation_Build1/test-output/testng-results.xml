@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="369761" started-at="2015-08-05T13:17:03Z" finished-at="2015-08-05T13:23:13Z">
+  <suite name="Default suite" duration-ms="296308" started-at="2015-08-07T08:09:20Z" finished-at="2015-08-07T08:14:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="369761" started-at="2015-08-05T13:17:03Z" finished-at="2015-08-05T13:23:13Z">
+    <test name="Default test" duration-ms="296308" started-at="2015-08-07T08:09:20Z" finished-at="2015-08-07T08:14:16Z">
       <class name="Batch.MasterScript">
-        <test-method status="PASS" signature="fnTestMain()[pri:0, instance:Batch.MasterScript@130d19a9]" name="fnTestMain" duration-ms="369737" started-at="2015-08-05T18:47:03Z" finished-at="2015-08-05T18:53:13Z">
+        <test-method status="PASS" signature="fnTestMain()[pri:0, instance:Batch.MasterScript@7f745b55]" name="fnTestMain" duration-ms="296290" started-at="2015-08-07T13:39:20Z" finished-at="2015-08-07T13:44:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fnTestMain -->

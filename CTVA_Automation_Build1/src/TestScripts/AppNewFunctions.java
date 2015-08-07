@@ -2318,7 +2318,6 @@ public class AppNewFunctions extends Globals{
 						bFlag=true;
 						if(ST.NativeElementFound(ObjectCollection.get("Login_Launcher_Backround").toString(), client))
 						{
-							//client.waitForElementToVanish("NATIVE", ObjectCollection.get("Login_Launcher_Backround").toString(), 0, 1000000);
 						}
 					}
 					else
@@ -2330,8 +2329,6 @@ public class AppNewFunctions extends Globals{
 							client.hybridWaitForPageLoad(5000);
 							ST.NativeClick(ObjectCollection.get("Login_OkBtn_EnvPopUp_IOS").toString(),client);
 						}
-						//					        client.elementSwipe("NATIVE",ObjectCollection.get("Login_Popover_EnvPopUp_IOS").toString(), 0, "Down", 0, 2000);
-						//					        client.isElementFound("NATIVE",ObjectCollection.get("Login_Prod_EnvPopUp").toString(), 0);
 						if(ST.NativeElementFound(ObjectCollection.get("Login_Launcher_Backround").toString(), client))
 						{
 							client.waitForElementToVanish("NATIVE", ObjectCollection.get("Login_Launcher_Backround").toString(), 0, 10000);
