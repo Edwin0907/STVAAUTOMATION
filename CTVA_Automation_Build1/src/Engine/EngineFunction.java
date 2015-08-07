@@ -83,11 +83,11 @@ public class EngineFunction {
 			int Counter=1;
 			Connection connection=fillo.getConnection(DeviceSheetName);
 			System.out.println(DeviceSheetName);
-			String DeviceQuery="Select * from Device_Sheet where Execution_Flag = 'Y'";
+			String DeviceQuery="Select * from Device_Sheet where Execution_Flag = 'Y'";// a=1,b=10,c=test
 			Recordset recordset=connection.executeQuery(DeviceQuery);
 			while(recordset.next())
 			{
-				DeviceList.put(""+Counter, recordset.getField("Device")+"||"+recordset.getField("OS"));	
+				DeviceList.put(""+Counter, recordset.getField("Device")+"||"+recordset.getField("OS"));
 				Counter=Counter+1;
 		    }
 			recordset.close();

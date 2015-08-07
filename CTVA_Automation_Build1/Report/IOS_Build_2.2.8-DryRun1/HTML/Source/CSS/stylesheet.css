@@ -1,0 +1,143 @@
+*{
+padding:0;
+margin:0;
+}
+
+#wrapper{
+max-width:1100px;
+margin:20px 10px 20px 10px;
+}
+
+#charter_heading{
+padding-left:25px;
+font-size:35px;
+color:#585858 ;
+font-family:Courier New Bold Italic;
+}
+
+#infosys_logo{
+float:right;
+}
+
+#header_table{
+width:100%;
+padding-bottom:50px;
+padding-left:75px;
+}
+
+#build_details,#tc_details,#TestStep_details{
+float:center;
+width:100%;
+margin-left:100px;
+}
+#Module_Details,#Total_Count_Table
+{
+float:center;
+width:100%;	
+}
+	
+
+#tc_details tr td, #TestStep_details tr td,#Module_Details tr td,#Total_Count_Table tr td{
+text-align:center;
+font-family:Courier New Bold;
+font-size:20px;
+}
+#Total_Count_Table tr td{
+width:25%;	
+}
+
+#build_details tr td {
+text-align:center;
+font-family:Courier New Bold;
+font-size:20px;
+}
+#build_details_heading  td{
+color:#FDFDFD;	
+}
+
+
+#dashboard_1{
+float:center;
+width:100%;
+margin-left:100px;
+margin-top:25px;
+}
+
+#dashboard_1 tr td{
+width:50%;
+text-align:center;
+font-family:Courier New Bold;
+font-size:20px;
+}
+
+#dashboard_1 td{
+color:#585858;
+}
+
+
+#footer_details{
+float:center;
+width:100%;
+margin-left:100px;
+margin-top:25px;
+}
+
+#tc_contents,#TestStep_contents
+{
+float:center;
+width:100%;
+margin-left:100px;
+margin-top:25px;
+text-align:center;
+}
+#tc_contents tr:hover, #TestStep_contents tr:hover
+{
+background-color: #A9F5F2;	
+}
+#tc_contents tr
+{
+cursor: pointer;	
+}	
+#tc_contents_heading td
+{
+text-align:center;
+font-family:Courier New Bold;
+font-size:15px;
+}
+#tc_link
+{
+	float:right;
+	margin-bottom:25px;
+	font-size:20px;	
+	cursor: pointer;
+	font-color:blue;
+}
+#home_link,#TS_link
+{
+	float:left;
+	margin-left:20px;
+	margin-bottom:25px;
+	font-size:20px;	
+	cursor: pointer;
+	font-color:blue;
+}
+a
+	{
+	text-decoration: none;
+}
+a:hover
+	{
+	 color: #FF0066;
+	 cursor: pointer;
+}
+#home_link img
+{
+	position: relative;
+    top:3px;
+    margin-left:70px;
+}
+#tc_link img
+{
+	position: relative;
+    top:3px;
+} 

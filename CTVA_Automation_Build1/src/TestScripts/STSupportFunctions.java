@@ -15,8 +15,17 @@ public class STSupportFunctions {
 	{
 		if(this.NativeElementFound(ObjRef, client))
 		{
-			client.click("NATIVE",ObjRef ,0, 1, 0, 0);
-			return true;
+			try{
+				client.click("NATIVE",ObjRef ,0, 1, 0, 0);
+			
+				return true;
+			}
+			catch(Exception e)
+			{
+				client.sleep(2000);
+				client.click("NATIVE",ObjRef ,0, 1, 0, 0);
+				return true;
+			}
 		}
 		else
 		{

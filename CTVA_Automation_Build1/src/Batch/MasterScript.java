@@ -22,8 +22,8 @@ public class MasterScript
 	{
 		//TR.Connect_TestRail();
 		//Release name or Build name
-		g.Current_Build = "iOS_Execution";
-		g.Result_Path = "D:\\";
+		g.Current_Build = "Android_Build_2.2.8-Dry1";
+		g.Result_Path = "D:\\"; // Modification is on progress to redirect to drive C
 		
 		/*Modified to retrieve path Using Main class name - modified by Deepak*/
 		final File f = new File(MasterScript.class.getProtectionDomain().getCodeSource().getLocation().getPath());
@@ -65,7 +65,7 @@ public class MasterScript
 				
 				//Getting Test Case Details
 				g.TestData_Path = g.BinPath.replace("bin", "Data\\TestData.xls");
-				g.TDColumn_Count = Integer.parseInt((EF.FnTableLength(g.TestData_Path)).split("\\|\\|")[1]) ;
+				g.TDColumn_Count = Integer.parseInt((EF.FnTableLength(g.TestData_Path)).split("\\|\\|")[1]);
 				g.TDRow_Count = Integer.parseInt((EF.FnTableLength(g.TestData_Path)).split("\\|\\|")[0]) ;
 				
 				//Executing Test case wise

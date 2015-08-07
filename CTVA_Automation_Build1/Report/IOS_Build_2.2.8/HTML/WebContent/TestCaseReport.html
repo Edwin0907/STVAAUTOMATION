@@ -1,0 +1,3255 @@
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
+  <link rel="stylesheet" type="text/css" href="../Source/CSS/stylesheet.css"> 
+  <script src="../Source/Jquery/JQuery.js"> </script> 
+  <script>
+  $(document).ready(function() {
+	  	     TotalTime();
+	  	   TCCount();
+	  	 $("#Total_TC_Heading").click(function() {
+		  		$( ".Pass" ).show();
+		  		$( ".Pending" ).show();
+		  		$( ".Fail" ).show();
+		  		});
+		  	$("#Total_Pass_Heading").click(function() {
+		  		$( ".Pending" ).hide();
+		  		$( ".Fail" ).hide();
+		  		$( ".Pass" ).show();
+		  		});
+		  	$("#Total_Fail_Heading").click(function() {
+		  		$( ".Pending" ).hide();
+		  		$( ".Pass" ).hide();
+		  		$( ".Fail" ).show();
+		  		});
+		  	$("#Total_Pending_Heading").click(function() {
+		  		$( ".Fail" ).hide();
+		  		$( ".Pass" ).hide();
+		  		$( ".Pending" ).show();
+		  		});
+	  });
+ </script> 
+  <script>
+function TotalTime()
+{
+var tot=0;
+var dat = document.getElementsByName("TimeTaken");
+for(i=0;i<dat.length;i++)
+{
+	tot = tot + +dat[i].innerHTML;
+}
+var mins = Math.round(tot/60);
+document.getElementById("total_time").innerHTML = tot + " -> "+mins+"mins";
+//alert (tot);
+}
+function TCCount()
+{
+	var pass = -1, fail = -1,pending = -1;
+	var list = document.getElementsByTagName("img")
+	for(j=0;j<list.length;j++)
+	{
+		var temp = list[j].getAttribute("src");
+		if (temp.indexOf("green")>1)
+		{
+			pass = pass +1;
+		}
+		if (temp.indexOf("red")>1)
+		{
+			fail = fail +1;
+		}
+		if (temp.indexOf("yellow")>1)
+		{
+			pending = pending +1;
+		}
+	}
+	var totaltc = pass+fail+pending;
+	document.getElementById("total_tc").innerHTML = totaltc;
+	document.getElementById("total_pass").innerHTML = pass;
+	document.getElementById("total_fail").innerHTML = fail;
+	document.getElementById("total_pending").innerHTML = pending;
+	var completion = 0;
+	if (totaltc==0)
+	{
+		completion=0;
+	}
+	else
+	{	  
+	completion = Math.round(((pass+fail)/totaltc)*100);
+	}
+	document.getElementById("completion_percent").innerHTML = completion + "  %";
+}
+ </script> 
+  <title>Test Case Report</title> 
+ </head> 
+ <body> 
+  <div id="wrapper"> 
+   <table id="header_table"> 
+    <tbody> 
+     <tr> 
+      <td><img src="../Source/Image/Charter-logo-final.png" id="charter_logo"></td> 
+      <td><h1 id="charter_heading" onclick="TotalTime()">CTVA Automation Report</h1></td> 
+      <td><img src="../Source/Image/Infosys-logo-final.png" id="infosys_logo"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <a id="home_link" href="Index.html"><img src="../Source/Image/left_arrow.png">Home</a> 
+   <table id="tc_details" border="2"> 
+    <tbody> 
+     <tr> 
+      <td id="Total_TC_Heading"><a>Total TC</a></td> 
+      <td id="Total_Pass_Heading"><a>Pass <img src="../Source/Image/green dot.png"></a></td> 
+      <td id="Total_Fail_Heading"><a>Fail <img src="../Source/Image/red dot.jpg"></a></td> 
+      <td id="Total_Pending_Heading"><a>Pending <img src="../Source/Image/yellow dot.png"></a></td> 
+      <td>Completion %</td> 
+      <td>Total Time (s)</td> 
+     </tr> 
+     <tr> 
+      <td id="total_tc">596</td> 
+      <td id="total_pass">500</td> 
+      <td id="total_fail">90</td> 
+      <td id="total_pending">6</td> 
+      <td id="completion_percent">90</td> 
+      <td id="total_time">500</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <table id="tc_contents" border="2"> 
+    <tbody> 
+     <tr id="tc_contents_heading"> 
+      <td width="10%">Manual TC</td> 
+      <td width="15%">Automation ID</td> 
+      <td width="40%">Description</td> 
+      <td width="5%">Status</td> 
+      <td width="10%">Start Time</td> 
+      <td width="10%">End Time</td> 
+      <td width="10%">Time Taken (s)</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_009" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_009</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Login_General_010" class="Pending"> 
+      <td></td> 
+      <td>Auto_Login_General_010</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_009" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_009</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_010" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_010</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_011" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_011</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_012" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_012</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_013" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_013</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_014" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_014</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_015" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_015</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_016" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_016</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_017" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_017</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_018" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_018</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_019" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_019</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_020" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_020</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_021" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_021</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_IPVOD_Validations_022" class="Pending"> 
+      <td></td> 
+      <td>Auto_IPVOD_Validations_022</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_009" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_009</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_010" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_010</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_011" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_011</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_012" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_012</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_013" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_013</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_014" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_014</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_015" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_015</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_016" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_016</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_017" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_017</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_018" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_018</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_019" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_019</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_020" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_020</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_D2G_021" class="Pending"> 
+      <td></td> 
+      <td>Auto_D2G_021</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_009" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_009</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_010" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_010</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_011" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_011</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_012" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_012</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_013" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_013</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_014" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_014</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_015" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_015</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_016" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_016</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_017" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_017</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_018" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_018</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_019" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_019</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_OnDemand_020" class="Pending"> 
+      <td></td> 
+      <td>Auto_OnDemand_020</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_009" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_009</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Home_FavoritesEditPopOver_010" class="Pending"> 
+      <td></td> 
+      <td>Auto_Home_FavoritesEditPopOver_010</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_GuideScreen_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_GuideScreen_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_GuideScreen_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_GuideScreen_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_GuideScreen_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_GuideScreen_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_DDL_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_DDL_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_Guide_NCP_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_Guide_NCP_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_VideoPlayer_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_VideoPlayer_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_VideoPlayer_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_VideoPlayer_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_VideoPlayer_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_VideoPlayer_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_VideoPlayer_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_VideoPlayer_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_VideoPlayer_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_VideoPlayer_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_001" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_001</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_002" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_002</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_003" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_003</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_005" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_005</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_006" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_006</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_008" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_008</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_LiveTvScreen_009" class="Pending"> 
+      <td></td> 
+      <td>Auto_LiveTvScreen_009</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_001.html';"> 
+      <td align="center">C47688</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_001</td> 
+      <td>Verify the Program Title displays in the Full Asset Detail Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:00:43</td> 
+      <td align="center">13:02:34</td> 
+      <td align="center" name="TimeTaken">111</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_TimeSlot_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_TimeSlot_002.html';"> 
+      <td align="center">C47689</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_TimeSlot_002</td> 
+      <td>Verify that the Time Duration displays in the Full Asset Detail Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:34</td> 
+      <td align="center">13:02:35</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_OriginalAirDate_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_OriginalAirDate_003.html';"> 
+      <td align="center">C47690</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_OriginalAirDate_003</td> 
+      <td>Verify that the Original Air Date of the Selected Asset displays in the Full Asset Detail Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:35</td> 
+      <td align="center">13:02:36</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_DVRSelector_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_DVRSelector_004.html';"> 
+      <td align="center">C47691</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_DVRSelector_004</td> 
+      <td>DVR Selector should be visible for available Channels in the Full Screen Asset Detail</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:36</td> 
+      <td align="center">13:02:45</td> 
+      <td align="center" name="TimeTaken">9</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_NetwrokLOGO_005" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_NetwrokLOGO_005.html';"> 
+      <td align="center">C47692</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_NetwrokLOGO_005</td> 
+      <td>Verify that the Network logo is displayed inline with ratings in the Asset detail page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:45</td> 
+      <td align="center">13:02:46</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_WatchLiveText_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_WatchLiveText_006.html';"> 
+      <td align="center">C47693</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_WatchLiveText_006</td> 
+      <td>Verify whether the text is changed to WATCH LIVE for Send to TV option</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:46</td> 
+      <td align="center">13:02:47</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_WatchLIveIcon_007" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_WatchLIveIcon_007.html';"> 
+      <td align="center">C47694</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_WatchLIveIcon_007</td> 
+      <td>Verify that the WATCH LIVE option exists under the Send to TV icon in the Asset detail page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:47</td> 
+      <td align="center">13:02:48</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_RecordIcon_008" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_RecordIcon_008.html';"> 
+      <td align="center">C47695</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_RecordIcon_008</td> 
+      <td>Verify that the Record option exists besides the Send to TV section on Asset detail page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:48</td> 
+      <td align="center">13:02:49</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_WatchlistIcon_009" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_WatchlistIcon_009.html';"> 
+      <td align="center">C47696</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_WatchlistIcon_009</td> 
+      <td>Verify that the Watchlist option is not available for assets in guide screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:49</td> 
+      <td align="center">13:02:53</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_NetworkLOGO_010" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_GetListings_NetworkLOGO_010.html';"> 
+      <td align="center">C47697</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_GetListings_NetworkLOGO_010</td> 
+      <td>The Network Logo of the selected Asset should display in the Get Listings Pop-Over</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:53</td> 
+      <td align="center">13:02:57</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_ShowingDate_011" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_GetListings_ShowingDate_011.html';"> 
+      <td align="center">C47698</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_GetListings_ShowingDate_011</td> 
+      <td>The Showing Date of the selected Asset should display in the Get Listings Pop-Over</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:57</td> 
+      <td align="center">13:02:58</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_TimeSlot_012" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_GetListings_TimeSlot_012.html';"> 
+      <td align="center">C47699</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_GetListings_TimeSlot_012</td> 
+      <td>The Time Slot of the selected Asset should display in the Get Listings Pop-Over.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:58</td> 
+      <td align="center">13:02:59</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_RecordIcon_013" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_GetListings_RecordIcon_013.html';"> 
+      <td align="center">C47700</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_GetListings_RecordIcon_013</td> 
+      <td>The Record Button of the selected Asset should display in the Get Listings Pop-Over</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:02:59</td> 
+      <td align="center">13:03:01</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_ViewSections_014" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_GetListings_ViewSections_014.html';"> 
+      <td align="center">C47701</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_GetListings_ViewSections_014</td> 
+      <td>Verify whether user is able to view sections in Get Listings Modal</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:03:01</td> 
+      <td align="center">13:03:04</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_CurrentEpisodes_015" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_GetListings_CurrentEpisodes_015.html';"> 
+      <td align="center">C47702</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_GetListings_CurrentEpisodes_015</td> 
+      <td>Verify whether user is able to view the current episodes in current listings section in Get Listings Modal</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:03:04</td> 
+      <td align="center">13:03:06</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_GetListings_ActionsIcons_016" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_GetListings_ActionsIcons_016.html';"> 
+      <td align="center">C47703</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_GetListings_ActionsIcons_016</td> 
+      <td>Verify whether user is able to view Action buttons for current listings</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:03:06</td> 
+      <td align="center">13:03:10</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_FeatureListings_CurrentEpisodes_017" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_FeatureListings_CurrentEpisodes_017.html';"> 
+      <td align="center">C47704</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_FeatureListings_CurrentEpisodes_017</td> 
+      <td>Verify whether user is able to view the Feature episodes in future listings section in Get Listings Modal</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:03:10</td> 
+      <td align="center">13:03:59</td> 
+      <td align="center" name="TimeTaken">49</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_FeatureListings_ActionIcons_018" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_FeatureListings_ActionIcons_018.html';"> 
+      <td align="center">C47705</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_FeatureListings_ActionIcons_018</td> 
+      <td>Verify whether user is able to view Action buttons for feature listings</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:03:59</td> 
+      <td align="center">13:04:04</td> 
+      <td align="center" name="TimeTaken">5</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_RelatedListings_CurrentEpisodes_019" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_RelatedListings_CurrentEpisodes_019.html';"> 
+      <td align="center">C47706</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_RelatedListings_CurrentEpisodes_019</td> 
+      <td>Verify whether user is able to view the related episodes in related section in Get Listings Modal</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:04:04</td> 
+      <td align="center">13:04:54</td> 
+      <td align="center" name="TimeTaken">50</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_RelatedListings_ActionIcons_020" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_RelatedListings_ActionIcons_020.html';"> 
+      <td align="center">C47707</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_RelatedListings_ActionIcons_020</td> 
+      <td>Verify whether user is not able to view actions buttons for related episodes In get listings modal</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:04:54</td> 
+      <td align="center">13:05:01</td> 
+      <td align="center" name="TimeTaken">7</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_SetRecording_021" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_SetRecording_021.html';"> 
+      <td align="center">C47708</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_SetRecording_021</td> 
+      <td>Verify that the User is displayed with a "Series Recording Set" on selecting Record button for an asset that has multiple deliveries</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:05:01</td> 
+      <td align="center">13:05:36</td> 
+      <td align="center" name="TimeTaken">35</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_Play_022" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_Play_022.html';"> 
+      <td align="center">C47709</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_Play_022</td> 
+      <td>Verify that if the user is able to play an asset in the Tablet/Phone if the asset is ON</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:05:36</td> 
+      <td align="center">13:05:40</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_FullScreen_Back_023" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_FullScreen_Back_023.html';"> 
+      <td align="center">C47710</td> 
+      <td align="center">Auto_AssetDetails_FullScreen_Back_023</td> 
+      <td>The Full screen Asset Detail "back" button should direct user to the previous screen</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:05:40</td> 
+      <td align="center">13:05:51</td> 
+      <td align="center" name="TimeTaken">11</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsset_AssetDescription_024" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsset_AssetDescription_024.html';"> 
+      <td align="center">C47711</td> 
+      <td align="center">Auto_AssetDetails_MovieAsset_AssetDescription_024</td> 
+      <td>Verify that the Asset Detail has a full Asset Description displaying for the selected Asset</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:05:51</td> 
+      <td align="center">13:06:52</td> 
+      <td align="center" name="TimeTaken">61</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsset_ParentalGuidelines_025" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsset_ParentalGuidelines_025.html';"> 
+      <td align="center">C47712</td> 
+      <td align="center">Auto_AssetDetails_MovieAsset_ParentalGuidelines_025</td> 
+      <td>Verify that the Parental Guidelines(TV-Y ,TV-Y7, TV-G, TV-PG, TV-14, TV-MA) in the Asset Detail</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:06:52</td> 
+      <td align="center">13:06:59</td> 
+      <td align="center" name="TimeTaken">7</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsset_TVRatings_026" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsset_TVRatings_026.html';"> 
+      <td align="center">C47713</td> 
+      <td align="center">Auto_AssetDetails_MovieAsset_TVRatings_026</td> 
+      <td>Verify that the Movie Assets display Ratings (G,PG,PG-13,R) in Full Asset Detail</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:06:59</td> 
+      <td align="center">13:07:07</td> 
+      <td align="center" name="TimeTaken">8</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsset_ParentalRatings_027" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsset_ParentalRatings_027.html';"> 
+      <td align="center">C47714</td> 
+      <td align="center">Auto_AssetDetails_MovieAsset_ParentalRatings_027</td> 
+      <td>Verify the Parental Ratings in Full Asset Detail screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:07</td> 
+      <td align="center">13:07:19</td> 
+      <td align="center" name="TimeTaken">12</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsst_RatingsOverview_TVY_028" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsst_RatingsOverview_TVY_028.html';"> 
+      <td align="center">C47715</td> 
+      <td align="center">Auto_AssetDetails_MovieAsst_RatingsOverview_TVY_028</td> 
+      <td>Verify the TVY Ratings under TV Ratings in Rating Overview Popover</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:19</td> 
+      <td align="center">13:07:32</td> 
+      <td align="center" name="TimeTaken">13</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsst_RatingsOverview_TVY7_029" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsst_RatingsOverview_TVY7_029.html';"> 
+      <td align="center">C47716</td> 
+      <td align="center">Auto_AssetDetails_MovieAsst_RatingsOverview_TVY7_029</td> 
+      <td>Verify the TVY7 Ratings under TV Ratings in Rating Overview Popover</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:32</td> 
+      <td align="center">13:07:34</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsst_RatingsOverview_TVY7FV_030" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsst_RatingsOverview_TVY7FV_030.html';"> 
+      <td align="center">C47717</td> 
+      <td align="center">Auto_AssetDetails_MovieAsst_RatingsOverview_TVY7FV_030</td> 
+      <td>Verify the TVY7FV Ratings under TV Ratings in Rating Overview Popover</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:34</td> 
+      <td align="center">13:07:36</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsst_RatingsOverview_TVG_031" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsst_RatingsOverview_TVG_031.html';"> 
+      <td align="center">C47718</td> 
+      <td align="center">Auto_AssetDetails_MovieAsst_RatingsOverview_TVG_031</td> 
+      <td>Verify the TVG Ratings under TV Ratings in Rating Overview Popover</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:36</td> 
+      <td align="center">13:07:38</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsst_RatingsOverview_TVPG_032" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsst_RatingsOverview_TVPG_032.html';"> 
+      <td align="center">C47719</td> 
+      <td align="center">Auto_AssetDetails_MovieAsst_RatingsOverview_TVPG_032</td> 
+      <td>Verify the TVPG Ratings under TV Ratings in Rating Overview Popover</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:38</td> 
+      <td align="center">13:07:40</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsst_RatingsOverview_TV14_033" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsst_RatingsOverview_TV14_033.html';"> 
+      <td align="center">C47720</td> 
+      <td align="center">Auto_AssetDetails_MovieAsst_RatingsOverview_TV14_033</td> 
+      <td>Verify the TV14 Ratings under TV Ratings in Rating Overview Popover</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:40</td> 
+      <td align="center">13:07:42</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_MovieAsst_RatingsOverview_TVMA_034" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_MovieAsst_RatingsOverview_TVMA_034.html';"> 
+      <td align="center">C47721</td> 
+      <td align="center">Auto_AssetDetails_MovieAsst_RatingsOverview_TVMA_034</td> 
+      <td>Verify the TVMA Ratings under TV Ratings in Rating Overview Popover</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:42</td> 
+      <td align="center">13:07:46</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_REMINDMEICON_035" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_REMINDMEICON_035.html';"> 
+      <td align="center">C47722</td> 
+      <td align="center">Auto_AssetDetails_REMINDMEICON_035</td> 
+      <td>Verify that the Remind Me option exists besides the Send to TV section on Asset detail page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:46</td> 
+      <td align="center">13:07:47</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_RottonTomatoesIcon_036" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_RottonTomatoesIcon_036.html';"> 
+      <td align="center">C47723</td> 
+      <td align="center">Auto_AssetDetails_RottonTomatoesIcon_036</td> 
+      <td>Verify that the Rotten Tomatoes displays in the Full Asset Detail Screen</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:07:47</td> 
+      <td align="center">13:07:51</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_WatchlistIcon_037" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_WatchlistIcon_037.html';"> 
+      <td align="center">C47724</td> 
+      <td align="center">Auto_AssetDetails_WatchlistIcon_037</td> 
+      <td>Verify that the Watchlist option is available for assets in On Demand screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:51</td> 
+      <td align="center">13:07:52</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_StartONDemand_038" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_StartONDemand_038.html';"> 
+      <td align="center">C47725</td> 
+      <td align="center">Auto_AssetDetails_StartONDemand_038</td> 
+      <td>Verify that the Start On Demand icon is available for assets from On Demand section</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:07:52</td> 
+      <td align="center">13:07:56</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_EpisodeDetails_039" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_EpisodeDetails_039.html';"> 
+      <td align="center">C47726</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_EpisodeDetails_039</td> 
+      <td>Verify that the Episode Details of the Selected Asset is displaying in the Asset Detail</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:07:56</td> 
+      <td align="center">13:08:08</td> 
+      <td align="center" name="TimeTaken">12</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_SeriesDetails_CharacterName_040" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_SeriesDetails_CharacterName_040.html';"> 
+      <td align="center">C47727</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_SeriesDetails_CharacterName_040</td> 
+      <td>Verify the Character name in Series Details Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:08:08</td> 
+      <td align="center">13:08:13</td> 
+      <td align="center" name="TimeTaken">5</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_EpisodeDetails_CharacterName_041" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_EpisodeDetails_CharacterName_041.html';"> 
+      <td align="center">C47728</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_EpisodeDetails_CharacterName_041</td> 
+      <td>Verify the Character name in Episodes Details screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:08:13</td> 
+      <td align="center">13:08:16</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_SeasonDetails_042" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_SeasonDetails_042.html';"> 
+      <td align="center">C47729</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_SeasonDetails_042</td> 
+      <td>Verify that the Season Details (Season X) displays in the Full Asset Detail Screen</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:08:16</td> 
+      <td align="center">13:08:25</td> 
+      <td align="center" name="TimeTaken">9</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_GetListings_ChannelNumber_043" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_GetListings_ChannelNumber_043.html';"> 
+      <td align="center">C47730</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_GetListings_ChannelNumber_043</td> 
+      <td>Verify whether user is able to view Channel Number In get listings modal</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:08:25</td> 
+      <td align="center">13:08:29</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_GetListings_EpisodeTitle_044" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_GetListings_EpisodeTitle_044.html';"> 
+      <td align="center">C47731</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_GetListings_EpisodeTitle_044</td> 
+      <td>Verify whether user is able to view Episode title In get listings modal</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:08:29</td> 
+      <td align="center">13:08:34</td> 
+      <td align="center" name="TimeTaken">5</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_GetListings_SeasonNumber_045" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_GetListings_SeasonNumber_045.html';"> 
+      <td align="center">C47732</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_GetListings_SeasonNumber_045</td> 
+      <td>Verify whether user is able to view Season number In get listings modal</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:08:34</td> 
+      <td align="center">13:08:38</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_TVAsset_GetListings_EpisodeNumber_046" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_TVAsset_GetListings_EpisodeNumber_046.html';"> 
+      <td align="center">C47733</td> 
+      <td align="center">Auto_AssetDetails_TVAsset_GetListings_EpisodeNumber_046</td> 
+      <td>Verify whether user is able to view Episode number In get listings modal</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:08:38</td> 
+      <td align="center">13:08:42</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset__047" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset__047.html';"> 
+      <td align="center">C47734</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset__047</td> 
+      <td>Verify whether on tapping an On demand asset from Most Popular On Demand panel takes user to the OnDemand Asset detail page</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:08:42</td> 
+      <td align="center">13:10:14</td> 
+      <td align="center" name="TimeTaken">92</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_WatchlistIcon_048" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_WatchlistIcon_048.html';"> 
+      <td align="center">C47735</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_WatchlistIcon_048</td> 
+      <td>Verify that the Watchlist option is available for assets displayed under Most Popular On Demand panel in Home screen</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:10:14</td> 
+      <td align="center">13:10:18</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_CastAndCrew_049" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_CastAndCrew_049.html';"> 
+      <td align="center">C47736</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_CastAndCrew_049</td> 
+      <td>Verify that the Cast Asset Cover Art displays with the cast name, character name, and is available to be selected</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:10:18</td> 
+      <td align="center">13:10:22</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_CastAndCrew_CastName_050" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_CastAndCrew_CastName_050.html';"> 
+      <td align="center">C47737</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_CastAndCrew_CastName_050</td> 
+      <td>Verification for the Cast Name Under Cast&amp;Crew Section</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">13:10:22</td> 
+      <td align="center">13:10:23</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_CastAndCrew_CharacterName_051" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_CastAndCrew_CharacterName_051.html';"> 
+      <td align="center">C47738</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_CastAndCrew_CharacterName_051</td> 
+      <td>Verification for the Character Name under Cast&amp;Crew Sectio</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:10:23</td> 
+      <td align="center">13:10:36</td> 
+      <td align="center" name="TimeTaken">13</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_PhotesSection_052" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_PhotesSection_052.html';"> 
+      <td align="center">C47739</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_PhotesSection_052</td> 
+      <td>Verify that all Photos from the selected Asset display in the Photos Tab</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:10:36</td> 
+      <td align="center">13:11:25</td> 
+      <td align="center" name="TimeTaken">49</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_Photes_Enlarged_053" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_Photes_Enlarged_053.html';"> 
+      <td align="center">C47740</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_Photes_Enlarged_053</td> 
+      <td>When a photo is tapped, it should expand to a larger size</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:11:25</td> 
+      <td align="center">13:12:13</td> 
+      <td align="center" name="TimeTaken">48</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_MorelikeThisSection_054" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_MorelikeThisSection_054.html';"> 
+      <td align="center">C47741</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_MorelikeThisSection_054</td> 
+      <td>More Like This Assets should display with Cover Art</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:12:13</td> 
+      <td align="center">13:13:02</td> 
+      <td align="center" name="TimeTaken">49</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OnDemandAsset_WatchlistPanel_AssetDetails_055" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OnDemandAsset_WatchlistPanel_AssetDetails_055.html';"> 
+      <td align="center">C47742</td> 
+      <td align="center">Auto_AssetDetails_OnDemandAsset_WatchlistPanel_AssetDetails_055</td> 
+      <td>Verify whether on tapping an On demand asset from Watchlist panel takes user to the OnDemand Asset detail page</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:13:02</td> 
+      <td align="center">13:13:10</td> 
+      <td align="center" name="TimeTaken">8</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OndemandAsset_MyFavoritesPanel_PlayIcon_056" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_AssetDetails_OndemandAsset_MyFavoritesPanel_PlayIcon_056.html';"> 
+      <td align="center">C47743</td> 
+      <td align="center">Auto_AssetDetails_OndemandAsset_MyFavoritesPanel_PlayIcon_056</td> 
+      <td>Verify that the Asset detail page includes the following for a currently airing asset selected from My Favorites panel in Home Screen</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">13:13:10</td> 
+      <td align="center">13:13:57</td> 
+      <td align="center" name="TimeTaken">47</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_OndemandAsset_MyFavoritesPanel_WatchonTablet_057" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_OndemandAsset_MyFavoritesPanel_WatchonTablet_057</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_058" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_058</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_059" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_059</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_060" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_060</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_061" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_061</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_062" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_062</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_063" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_063</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_064" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_064</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_065" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_065</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_066" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_066</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_067" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_067</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_068" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_068</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_069" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_069</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_070" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_070</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_071" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_071</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_072" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_072</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_073" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_073</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_074" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_074</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_075" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_075</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_076" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_076</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_077" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_077</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_078" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_078</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_AssetDetails_Flyover_079" class="Pending"> 
+      <td></td> 
+      <td>Auto_AssetDetails_Flyover_079</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_001.html';"> 
+      <td align="center">C132512</td> 
+      <td align="center">Auto_KidZone_001</td> 
+      <td>The Kid Zone Landing Page should display 3 different Panels, categorized in 2 different Age Groups: Toddler &amp; Kindergarten and Elementary School.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:10:48</td> 
+      <td align="center">15:11:26</td> 
+      <td align="center" name="TimeTaken">38</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_002.html';"> 
+      <td align="center">C132513</td> 
+      <td align="center">Auto_KidZone_002</td> 
+      <td>All assets in the Live TV panel should load cover art and should be able to be scrolled through left and right</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:11:26</td> 
+      <td align="center">15:11:45</td> 
+      <td align="center" name="TimeTaken">19</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_003.html';"> 
+      <td align="center">C132514</td> 
+      <td align="center">Auto_KidZone_003</td> 
+      <td>When Assets in Kid Zone Grid View Layout are selected, should display the pop-over Asset Detail.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:11:45</td> 
+      <td align="center">15:11:58</td> 
+      <td align="center" name="TimeTaken">13</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_004.html';"> 
+      <td align="center">C132515</td> 
+      <td align="center">Auto_KidZone_004</td> 
+      <td>From the Kid Zone, Entitled channels should appear and when tapped direct the user to the live streaming selected asset.</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:11:58</td> 
+      <td align="center">15:12:30</td> 
+      <td align="center" name="TimeTaken">32</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_006.html';"> 
+      <td align="center">C132517</td> 
+      <td align="center">Auto_KidZone_006</td> 
+      <td>Verify head of household user (parent account) is presented with Parental Control Pop over on initial login</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:12:53</td> 
+      <td align="center">15:13:15</td> 
+      <td align="center" name="TimeTaken">22</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_007" class="Pending"> 
+      <td></td> 
+      <td>Auto_KidZone_007</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_KidZoneLockPopOver_001.html';"> 
+      <td align="center">C47773</td> 
+      <td align="center">Auto_KidZone_KidZoneLockPopOver_001</td> 
+      <td>Verify the kidzone functionality</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:13:16</td> 
+      <td align="center">15:14:18</td> 
+      <td align="center" name="TimeTaken">62</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_002" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_KidZoneLockPopOver_002.html';"> 
+      <td align="center">C47609</td> 
+      <td align="center">Auto_KidZone_KidZoneLockPopOver_002</td> 
+      <td>Verify the kidzone functionality</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:14:18</td> 
+      <td align="center">15:14:27</td> 
+      <td align="center" name="TimeTaken">9</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_KidZone_KidZoneLockPopOver_003.html';">
+      <td align="center">C47610</td>
+      <td align="center">Auto_KidZone_KidZoneLockPopOver_003</td>
+      <td>Verify the kidzone functionality</td>
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td>
+      <td align="center">15:14:27</td>
+      <td align="center">15:14:33</td>
+      <td align="center" name="TimeTaken">6</td>
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_KidZone_KidZoneLockPopOver_004" class="Pending"> 
+      <td></td> 
+      <td>Auto_KidZone_KidZoneLockPopOver_004</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_001" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_001.html';"> 
+      <td align="center">C47777</td> 
+      <td align="center">Auto_SportZone_001</td> 
+      <td>Verify whether the programs are not available for streaming while Out of Home</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:26:30</td> 
+      <td align="center">18:29:02</td> 
+      <td align="center" name="TimeTaken">152</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_002" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_002.html';"> 
+      <td align="center">C47778</td> 
+      <td align="center">Auto_SportZone_002</td> 
+      <td>Verify whether Dragging down the page display loading spindle</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:29:02</td> 
+      <td align="center">18:29:15</td> 
+      <td align="center" name="TimeTaken">13</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_003" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_003.html';"> 
+      <td align="center">C47779</td> 
+      <td align="center">Auto_SportZone_003</td> 
+      <td>Verify whether Loading spindle is getting diminished after the page is refreshed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:29:15</td> 
+      <td align="center">18:29:27</td> 
+      <td align="center" name="TimeTaken">12</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_004" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_004.html';"> 
+      <td align="center">C47780</td> 
+      <td align="center">Auto_SportZone_004</td> 
+      <td>Verify that Sports Zone menu is been added in home screen navigation drawer after On Demand and before Kid Zone</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:29:27</td> 
+      <td align="center">18:29:37</td> 
+      <td align="center" name="TimeTaken">10</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_005" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_005.html';"> 
+      <td align="center">C47781</td> 
+      <td align="center">Auto_SportZone_005</td> 
+      <td>Verify that Network Logo or Network call sign is displayed in SportZone page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:29:37</td> 
+      <td align="center">18:29:41</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_006" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_006.html';"> 
+      <td align="center">C47782</td> 
+      <td align="center">Auto_SportZone_006</td> 
+      <td>Verify whether the section Games on TV is available in the Sportszone tab</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:29:41</td> 
+      <td align="center">18:29:42</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_007" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_007.html';"> 
+      <td align="center">C47783</td> 
+      <td align="center">Auto_SportZone_007</td> 
+      <td>Verify whether the User is able to swip the SportZone page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:29:42</td> 
+      <td align="center">18:31:29</td> 
+      <td align="center" name="TimeTaken">107</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_008" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_008.html';"> 
+      <td align="center">C47784</td> 
+      <td align="center">Auto_SportZone_008</td> 
+      <td>Verify whether the on going program asset is displayed in sportzone asset container</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:48:09</td> 
+      <td align="center">18:49:21</td> 
+      <td align="center" name="TimeTaken">72</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_009" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_009.html';"> 
+      <td align="center">C47785</td> 
+      <td align="center">Auto_SportZone_009</td> 
+      <td>Check whether On Clicking the Asset content the Standard Asset details page is displayed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:49:21</td> 
+      <td align="center">18:49:32</td> 
+      <td align="center" name="TimeTaken">11</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_010" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_010.html';"> 
+      <td align="center">C47786</td> 
+      <td align="center">Auto_SportZone_010</td> 
+      <td>Verify whether all the elements in the sportzone tab is displayed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:49:32</td> 
+      <td align="center">18:49:47</td> 
+      <td align="center" name="TimeTaken">15</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_011" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_011.html';"> 
+      <td align="center">C47787</td> 
+      <td align="center">Auto_SportZone_011</td> 
+      <td>Verify whether the Games on TV and Programs is displayed in SportZone landing page</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:49:47</td> 
+      <td align="center">18:50:08</td> 
+      <td align="center" name="TimeTaken">21</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_012" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_012.html';"> 
+      <td align="center">C47788</td> 
+      <td align="center">Auto_SportZone_012</td> 
+      <td>Check for the Unentitled assets in the asset container</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:50:08</td> 
+      <td align="center">18:51:07</td> 
+      <td align="center" name="TimeTaken">59</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_013" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_013.html';"> 
+      <td align="center">C47789</td> 
+      <td align="center">Auto_SportZone_013</td> 
+      <td>Verify whether the Sports timing is displayed in all the assets</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:51:07</td> 
+      <td align="center">18:51:16</td> 
+      <td align="center" name="TimeTaken">9</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_014" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_014.html';"> 
+      <td align="center">C47790</td> 
+      <td align="center">Auto_SportZone_014</td> 
+      <td>Validate the Assets are listed according to the game timing</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:51:16</td> 
+      <td align="center">18:51:28</td> 
+      <td align="center" name="TimeTaken">12</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_015" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_015.html';"> 
+      <td align="center">C47791</td> 
+      <td align="center">Auto_SportZone_015</td> 
+      <td>Verify whether the Spoilers is displayed in the SportZone landing page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:51:28</td> 
+      <td align="center">18:51:35</td> 
+      <td align="center" name="TimeTaken">7</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_016" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_016.html';"> 
+      <td align="center">C47792</td> 
+      <td align="center">Auto_SportZone_016</td> 
+      <td>Verify whether the Spoilers is checked on by default in the SportZone landing page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:51:35</td> 
+      <td align="center">18:51:36</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_017" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_017.html';"> 
+      <td align="center">C47793</td> 
+      <td align="center">Auto_SportZone_017</td> 
+      <td>Verify whether the scores are displayed for the on going games in the asset container</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:51:36</td> 
+      <td align="center">18:51:39</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_018" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_018.html';"> 
+      <td align="center">C47794</td> 
+      <td align="center">Auto_SportZone_018</td> 
+      <td></td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:51:39</td> 
+      <td align="center">18:51:47</td> 
+      <td align="center" name="TimeTaken">8</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_019" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_019.html';"> 
+      <td align="center">C47795</td> 
+      <td align="center">Auto_SportZone_019</td> 
+      <td></td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:51:47</td> 
+      <td align="center">18:51:54</td> 
+      <td align="center" name="TimeTaken">7</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_020" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_020.html';"> 
+      <td align="center">C47796</td> 
+      <td align="center">Auto_SportZone_020</td> 
+      <td>Check on clicking asset content the standard assset details is getting displayed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:51:54</td> 
+      <td align="center">18:51:59</td> 
+      <td align="center" name="TimeTaken">5</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_021" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_021.html';"> 
+      <td align="center">C47797</td> 
+      <td align="center">Auto_SportZone_021</td> 
+      <td>Verify On live going games asset detail page asset should contain scores</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:51:59</td> 
+      <td align="center">18:52:05</td> 
+      <td align="center" name="TimeTaken">6</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_022" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_022.html';"> 
+      <td align="center">C47798</td> 
+      <td align="center">Auto_SportZone_022</td> 
+      <td>Verify whether the progress bar is getting displayed in the Asset details</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:52:05</td> 
+      <td align="center">18:52:09</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_023" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_023.html';"> 
+      <td align="center">C47799</td> 
+      <td align="center">Auto_SportZone_023</td> 
+      <td></td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:52:09</td> 
+      <td align="center">18:52:13</td> 
+      <td align="center" name="TimeTaken">4</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_024" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_024.html';"> 
+      <td align="center">C47800</td> 
+      <td align="center">Auto_SportZone_024</td> 
+      <td>Verify Network logo, Team logo, Team Name is displayed n in the asset content</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:52:13</td> 
+      <td align="center">18:52:15</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_025" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_025.html';"> 
+      <td align="center">C47801</td> 
+      <td align="center">Auto_SportZone_025</td> 
+      <td>Verify whether the Game time and Game date is displayed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:52:15</td> 
+      <td align="center">18:52:18</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_026" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_026.html';"> 
+      <td align="center">C47802</td> 
+      <td align="center">Auto_SportZone_026</td> 
+      <td>Verify the asset details page of any asset</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:52:18</td> 
+      <td align="center">18:52:24</td> 
+      <td align="center" name="TimeTaken">6</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_027" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_027.html';"> 
+      <td align="center">C47803</td> 
+      <td align="center">Auto_SportZone_027</td> 
+      <td>Verify whether the user have all the different type of filter opiton</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:52:24</td> 
+      <td align="center">18:52:30</td> 
+      <td align="center" name="TimeTaken">6</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_028" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_028.html';"> 
+      <td align="center">C47804</td> 
+      <td align="center">Auto_SportZone_028</td> 
+      <td>Verify whether the All option is displayed in the asset container</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:52:30</td> 
+      <td align="center">18:52:31</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_029" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_029.html';"> 
+      <td align="center">C47805</td> 
+      <td align="center">Auto_SportZone_029</td> 
+      <td>Verify on doing NHL filter validation, the NHL programs or No results message should be displayed</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:52:31</td> 
+      <td align="center">18:53:10</td> 
+      <td align="center" name="TimeTaken">39</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_030" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_030.html';"> 
+      <td align="center">C47806</td> 
+      <td align="center">Auto_SportZone_030</td> 
+      <td>Verify on doing NBA filter validation, the NBA programs or No results message should be displayed</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:53:10</td> 
+      <td align="center">18:53:48</td> 
+      <td align="center" name="TimeTaken">38</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_031" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_031.html';"> 
+      <td align="center">C47807</td> 
+      <td align="center">Auto_SportZone_031</td> 
+      <td>Verify on doing MLB filter validation, the MLB programs or No results message should be displayed</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:53:48</td> 
+      <td align="center">18:54:29</td> 
+      <td align="center" name="TimeTaken">41</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_032" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_032.html';"> 
+      <td align="center">C47808</td> 
+      <td align="center">Auto_SportZone_032</td> 
+      <td>Verify on doing NHL filter validation, the NHL programs or No results message should be displayed</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:54:29</td> 
+      <td align="center">18:55:07</td> 
+      <td align="center" name="TimeTaken">38</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_033" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_033.html';"> 
+      <td align="center">C47809</td> 
+      <td align="center">Auto_SportZone_033</td> 
+      <td>Verify on doing NCAAF filter validation, the NCAAF programs or No results message should be displayed</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:55:07</td> 
+      <td align="center">18:55:46</td> 
+      <td align="center" name="TimeTaken">39</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_034" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_034.html';"> 
+      <td align="center">C47810</td> 
+      <td align="center">Auto_SportZone_034</td> 
+      <td>Verify on doing NCAAMB filter validation, the NCAAMB programs or No results message should be displayed</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:55:46</td> 
+      <td align="center">18:56:26</td> 
+      <td align="center" name="TimeTaken">40</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_035" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_035.html';"> 
+      <td align="center">C47811</td> 
+      <td align="center">Auto_SportZone_035</td> 
+      <td>Verify whether no results message is displayed if there is no games found</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:56:26</td> 
+      <td align="center">18:57:04</td> 
+      <td align="center" name="TimeTaken">38</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_036" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_036.html';"> 
+      <td align="center">C47812</td> 
+      <td align="center">Auto_SportZone_036</td> 
+      <td>On Clicking any filter option the asset container of particular asset should be sorted</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:57:04</td> 
+      <td align="center">18:57:09</td> 
+      <td align="center" name="TimeTaken">5</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_037" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_037.html';"> 
+      <td align="center">C47813</td> 
+      <td align="center">Auto_SportZone_037</td> 
+      <td>Verify whether the Games on TV and Programs is displayed in SportZone landing page</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:57:09</td> 
+      <td align="center">18:58:31</td> 
+      <td align="center" name="TimeTaken">82</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_038" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_038.html';"> 
+      <td align="center">C47814</td> 
+      <td align="center">Auto_SportZone_038</td> 
+      <td>Check for the Unentitled assets in the asset container</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:58:31</td> 
+      <td align="center">18:58:33</td> 
+      <td align="center" name="TimeTaken">2</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_039" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_039.html';"> 
+      <td align="center">C47815</td> 
+      <td align="center">Auto_SportZone_039</td> 
+      <td>Verify whether the Sports timing is displayed in all the assets</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">18:58:33</td> 
+      <td align="center">18:58:34</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_040" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_040.html';"> 
+      <td align="center">C47816</td> 
+      <td align="center">Auto_SportZone_040</td> 
+      <td>Validate the Assets are listed according to the game timing</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:58:34</td> 
+      <td align="center">18:59:19</td> 
+      <td align="center" name="TimeTaken">45</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_041" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_041.html';"> 
+      <td align="center">C47817</td> 
+      <td align="center">Auto_SportZone_041</td> 
+      <td>Verify whether the Spoilers is displayed in the SportZone landing page</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:59:19</td> 
+      <td align="center">18:59:49</td> 
+      <td align="center" name="TimeTaken">30</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_042" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_042.html';"> 
+      <td align="center">C47818</td> 
+      <td align="center">Auto_SportZone_042</td> 
+      <td>Verify whether the Spoilers is checked on by default in the SportZone landing page</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">18:59:49</td> 
+      <td align="center">19:00:01</td> 
+      <td align="center" name="TimeTaken">12</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_043" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_043.html';"> 
+      <td align="center">C47819</td> 
+      <td align="center">Auto_SportZone_043</td> 
+      <td>Verify whether the scores are displayed for the on going games in the asset container</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">19:00:01</td> 
+      <td align="center">19:00:36</td> 
+      <td align="center" name="TimeTaken">35</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_044" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_044.html';"> 
+      <td align="center">C47820</td> 
+      <td align="center">Auto_SportZone_044</td> 
+      <td></td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">19:00:36</td> 
+      <td align="center">19:00:44</td> 
+      <td align="center" name="TimeTaken">8</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_045" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_045.html';"> 
+      <td align="center">C47821</td> 
+      <td align="center">Auto_SportZone_045</td> 
+      <td></td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">19:00:44</td> 
+      <td align="center">19:02:13</td> 
+      <td align="center" name="TimeTaken">89</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_046" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_046.html';"> 
+      <td align="center">C47822</td> 
+      <td align="center">Auto_SportZone_046</td> 
+      <td>Check on clicking asset content the standard assset details is getting displayed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">19:02:13</td> 
+      <td align="center">19:02:13</td> 
+      <td align="center" name="TimeTaken">0</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_047" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_047.html';"> 
+      <td align="center">C47823</td> 
+      <td align="center">Auto_SportZone_047</td> 
+      <td>Verify On live going games asset detail page asset should contain scores</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">19:02:13</td> 
+      <td align="center">19:02:26</td> 
+      <td align="center" name="TimeTaken">13</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_048" class="Fail" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_048.html';"> 
+      <td align="center">C47824</td> 
+      <td align="center">Auto_SportZone_048</td> 
+      <td>Verify whether the progress bar is getting displayed in the Asset details</td> 
+      <td align="center"><img id="Fail" src="..//Source//Image//red dot.jpg"></td> 
+      <td align="center">15:55:51</td> 
+      <td align="center">15:57:18</td> 
+      <td align="center" name="TimeTaken">87</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_049" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_049.html';"> 
+      <td align="center">C47825</td> 
+      <td align="center">Auto_SportZone_049</td> 
+      <td></td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:57:18</td> 
+      <td align="center">15:57:19</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_050" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_050.html';"> 
+      <td align="center">C47826</td> 
+      <td align="center">Auto_SportZone_050</td> 
+      <td>Verify Network logo, Team logo, Team Name is displayed n in the asset content</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:57:19</td> 
+      <td align="center">15:57:20</td> 
+      <td align="center" name="TimeTaken">1</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_051" class="Pass" onclick="document.location='../WebContent/TestCaseStepReport/Auto_SportZone_051.html';"> 
+      <td align="center">C47827</td> 
+      <td align="center">Auto_SportZone_051</td> 
+      <td>Verify whether the Game time and Game date is displayed</td> 
+      <td align="center"><img id="Pass" src="..//Source//Image//green dot.png"></td> 
+      <td align="center">15:57:20</td> 
+      <td align="center">15:57:23</td> 
+      <td align="center" name="TimeTaken">3</td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_052" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_052</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_053" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_053</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_054" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_054</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_055" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_055</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_056" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_056</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_057" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_057</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_058" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_058</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_059" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_059</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_060" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_060</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_061" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_061</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_062" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_062</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_063" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_063</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_064" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_064</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_065" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_065</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_066" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_066</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_067" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_067</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_068" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_068</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_069" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_069</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_070" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_070</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_071" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_071</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_072" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_072</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_073" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_073</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_074" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_074</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_075" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_075</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_076" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_076</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_077" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_077</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_078" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_078</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_079" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_079</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+    <tbody> 
+     <tr align="center" id="Auto_SportZone_080" class="Pending"> 
+      <td></td> 
+      <td>Auto_SportZone_080</td> 
+      <td></td> 
+      <td align="center"><img src="../Source/Image/yellow dot.png"></td> 
+      <td></td> 
+      <td></td> 
+      <td></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div>  
+ </body>
+</html>

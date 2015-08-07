@@ -573,7 +573,7 @@ public class NewTestScripts extends AppNewFunctions
 		* Module : KidZone
 		* Test Cases : Auto_KidZone_001
 		=====================================================================================================*/
-		public void Auto_KidZone_001()
+		public void Auto_KidZone_002()
 		{
 			try
 	 		{ 
@@ -594,7 +594,7 @@ public class NewTestScripts extends AppNewFunctions
 		* Module : KidZone
 		* Test Cases : Auto_KidZone_002
 		=====================================================================================================*/
-		public void Auto_KidZone_002()
+		public void Auto_KidZone_003()
 		{
 			try
 	 		{ 
@@ -615,7 +615,7 @@ public class NewTestScripts extends AppNewFunctions
 		* Module : KidZone
 		* Test Cases : Auto_KidZone_003
 		=====================================================================================================*/
-		public void Auto_KidZone_003()
+		public void Auto_KidZone_004()
 		{
 			try
 	 		{ 
@@ -634,7 +634,7 @@ public class NewTestScripts extends AppNewFunctions
 		/*=====================================================================================================
 		* Author: Chandhini_A01
 		* Module : KidZone
-		* Test Cases : Auto_KidZone_005,Auto_KidZone_006
+		* Test Cases : Auto_KidZone_004,Auto_KidZone_005
 		=====================================================================================================*/
 		public void Auto_KidZone_005()
 		{
@@ -650,14 +650,13 @@ public class NewTestScripts extends AppNewFunctions
 				e.printStackTrace();
 				tearDown();
 	    	}
-	 			
 		}
 		/*=====================================================================================================
 		* Author: Chandhini_A01
 		* Module : KidZone
-		* Test Cases : Auto_KidZone_007
+		* Test Cases : Auto_KidZone_001
 		=====================================================================================================*/
-		public void Auto_KidZone_007()
+		public void Auto_KidZone_001()
 		{
 			try
 	 		{ 
@@ -2088,7 +2087,7 @@ public class NewTestScripts extends AppNewFunctions
  			{
  				try
  				{
- 					super.Fn_LogOut();
+					super.Fn_LogOut();
  					if(super.Fn_Login())
 					{
 						if(this.Fn_Com_Navigate("Home_SportZone"))
@@ -2273,7 +2272,8 @@ public class NewTestScripts extends AppNewFunctions
  	 	    public  void Auto_IPVOD_Validations_001()
  	 		{
  	 			try
- 	 	 		{ 	
+ 	 	 		{
+// 	 				System.out.println("Return Current Time : "+getCurrenttime()); //Formal method to retrieve the Current time
  	 				if(super.Fn_Login())
  	 					Auto_IPVOD_Validations();
  	 	 		}
@@ -2780,7 +2780,7 @@ public class NewTestScripts extends AppNewFunctions
 	 				e.printStackTrace();
 	 				tearDown();
 	 	    	}	
-		}
+	 		}
 		/*=====================================================================================================*/
 	 	/*=====================================================================================================
 	 		* Author: Chandhini
@@ -2792,7 +2792,6 @@ public class NewTestScripts extends AppNewFunctions
 	 		{
 	 			try
 	 	 		{ 	
-	 				
 	 				Fn_OnDemand_Download_FlyOver();
 	 	 		}
 	 	 		catch(Exception e)
@@ -2837,6 +2836,7 @@ public class NewTestScripts extends AppNewFunctions
 	 		{
 	 			try
 	 	 		{ 	
+	 				
 	 	 		}
 	 	 		catch(Exception e)
 	 	    	{
@@ -3462,8 +3462,8 @@ public class NewTestScripts extends AppNewFunctions
 	 		{
 	 	 		try
  				{
- 					if(ST.NativeElementFound(ObjectCollection.get("Home_TitleBar").toString(), client))
-	  					super.Fn_LogOut();
+// 					if(ST.NativeElementFound(ObjectCollection.get("Home_TitleBar").toString(), client))
+//	  					super.Fn_LogOut();
 					if(super.Fn_Login())
 					{
 						if(this.Fn_Com_Navigate("Home_SportZone"))
@@ -3507,11 +3507,30 @@ public class NewTestScripts extends AppNewFunctions
 	 	    	}	
 	 		}
 	 		
+	 		@Test(groups = {"seetest"})
+	 	    public  void Auto_VideoPlayer_004()
+	 		{
+	 			try
+	 	 		{ 	
+	 				videoPlayer4();
+	 	 		}
+	 	 		catch(Exception e)
+	 	    	{
+	 	    		System.err.println("Error in Fn_SportZone()");
+	 				System.err.println("	Message : "+e.getMessage());
+	 				System.err.println("	Cause : "+e.getCause());
+	 				e.printStackTrace();
+	 				tearDown();
+	 	    	}	
+	 		}
+	 		
+	 		
+	 		
 	 		public  void Auto_AssetDetails_FullScreen_001()
 	  		{
 	  			try
 	  	 		{
-	  				//super.Fn_LogOut();
+//	  				super.Fn_LogOut();
 	  				if(super.Fn_Login())
 	  				{
 	  					if(super.Fn_Com_Navigate("Home_Guide"))
@@ -3552,7 +3571,7 @@ public class NewTestScripts extends AppNewFunctions
 	 				try
 	 				{
 //	 					if(ST.NativeElementFound(ObjectCollection.get("Home_TitleBar").toString(), client))
-//		  					super.Fn_LogOut();
+//	 						super.Fn_LogOut();
 						if(super.Fn_Login())
 						{
 							if(this.Fn_Com_Navigate("Home_SportZone"))
